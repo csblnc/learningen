@@ -300,5 +300,8 @@
   <ItemGroup>
     <None Include="Resources\save.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Beethoven_English.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

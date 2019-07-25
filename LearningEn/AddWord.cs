@@ -82,11 +82,11 @@ namespace LearningEn
         {
             if (save)
             {
-                Console.WriteLine("title = " + title);
+                //Console.WriteLine("title = " + title);
                 if (title.Trim() != "")
                 {
                     string filename = TsbTbx.Text + "\\" + title.Trim() + ".xml";
-                    Console.WriteLine("filename = " + filename);
+                    //Console.WriteLine("filename = " + filename);
                     if (File.Exists(filename))
                     {
                         DialogResult dr = MessageBox.Show("文件已存在，是否覆盖？", "保存", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -136,7 +136,7 @@ namespace LearningEn
                         string t = Rtb.Lines[i];
                         t = t.Remove(t.IndexOf("</head>"));
                         title = t.Remove(t.IndexOf("<head>"), 6);
-                        Console.WriteLine("Title = " + title);
+                        //Console.WriteLine("Title = " + title);
                         TsbFileName.Text = title;
                     }
                     catch

@@ -64,7 +64,7 @@ namespace LearningEn
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             Tbx.Clear();
-            Lbx.Items.Clear();
+            LbxWord.Items.Clear();
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.InitialDirectory = AppInfoHelper.GetArticleFolder();
             dialog.Multiselect = false; //该值确定是否可以选择多个文件
@@ -154,15 +154,10 @@ namespace LearningEn
             dictDict = DictHelper.ReadDictDict();
         }
 
-        private void ArticleStudy_Load(object sender, EventArgs e)
-        {
-            //setTag(this);//调用方法
-        }
-
         private void BackgroundProcess()
         {
             int num = 0;        
-            AddTreeView(num);
+            AddWordList(num);
             ThreadFunction();
         }
 
@@ -178,7 +173,7 @@ namespace LearningEn
 
         private void ThreadFunction()
         {
-            if (this.Tv.InvokeRequired)
+            if (this.MPB.InvokeRequired)
             {
                 NewDelegate newdel = new NewDelegate(ThreadFunction);
                 this.Invoke(newdel);
@@ -186,8 +181,6 @@ namespace LearningEn
             }
             else
             {
-                ShowTreeView();
-                ShowCheckedListBox();
                 ShowListBox();
                 MPB.Hide();
                 BtnGrasp.Show();
@@ -210,15 +203,6 @@ namespace LearningEn
             }
         }
 
-        private void ShowCheckedListBox()
-        {
-            Clb.Items.Clear();
-            for (int i = 0; i < wordList.Count; i++)
-            {
-                Clb.Items.Add(wordList[i]);
-            }
-        }
-
         private string AddTrans(string word)
         {
             string result = "";
@@ -233,7 +217,7 @@ namespace LearningEn
             return result;
         }
 
-        private void AddTreeView(int num)
+        private void AddWordList(int num)
         {
             int count = words.Count;
             int i = 0;
@@ -265,24 +249,7 @@ namespace LearningEn
 
         private void ShowTreeView()
         {
-            //for(int i = 0; i < wordList.Count; i++)
-            //{
-            //    TreeNode node = new TreeNode();
-            //    //TreeNode subnode = new TreeNode();
-            //    node.Text = wordList[i];
-            //    Tv.Nodes.Add(node);
-            //    string[] s = transList[i].Split(new string[] { "\r\n" }, StringSplitOptions.None);
-            //    for(int j = 0; j < s.Length - 1; j++)
-            //    {
-            //        TreeNode subnode = new TreeNode();
-            //        subnode.Text = s[j];
-            //        subnode.NodeFont = new Font("宋体", 11, FontStyle.Regular);
-            //        node.Nodes.Add(subnode);
-            //    }
-            //    //subnode.Text = transList[i];
-            //    //subnode.NodeFont = new Font("宋体", 11, FontStyle.Regular);
-            //    //node.Nodes.Add(subnode);
-            //}
+
         }
 
         private void Tv_DrawNode(object sender, DrawTreeNodeEventArgs e)
@@ -370,29 +337,11 @@ namespace LearningEn
                     Single currentSize = System.Convert.ToSingle(mytag[4]);//字体大小
                     con.Font = new Font(con.Font.Name, currentSize, con.Font.Style, con.Font.Unit);
                 }
-                else if (con == Tv)
-                {
-                    con.Width = Convert.ToInt32(mytag[0])+(int)(formWidthN - formWidth) / 3;
-                    con.Height = Convert.ToInt32(mytag[1]) + formHeightN - formHeight;
-                    con.Left = Convert.ToInt32(mytag[2]) + (int)(formWidthN - formWidth) * 2 / 3;
-                    con.Top = Convert.ToInt32(mytag[3]);
-                    Single currentSize = System.Convert.ToSingle(mytag[4]);//字体大小
-                    con.Font = new Font(con.Font.Name, currentSize, con.Font.Style, con.Font.Unit);
-                }
                 else if (con == MPB)
                 {
                     con.Width = Convert.ToInt32(mytag[0]);
                     con.Height = Convert.ToInt32(mytag[1]);
                     con.Left = Convert.ToInt32(mytag[2]) + (int)(formWidthN - formWidth) / 2;
-                    con.Top = Convert.ToInt32(mytag[3]);
-                    Single currentSize = System.Convert.ToSingle(mytag[4]);//字体大小
-                    con.Font = new Font(con.Font.Name, currentSize, con.Font.Style, con.Font.Unit);
-                }
-                else if (con == Clb)
-                {
-                    con.Width = Convert.ToInt32(mytag[0]) + (int)(formWidthN - formWidth) / 3;
-                    con.Height = Convert.ToInt32(mytag[1]) + formHeightN - formHeight;
-                    con.Left = Convert.ToInt32(mytag[2]) + (int)(formWidthN - formWidth) * 2 / 3;
                     con.Top = Convert.ToInt32(mytag[3]);
                     Single currentSize = System.Convert.ToSingle(mytag[4]);//字体大小
                     con.Font = new Font(con.Font.Name, currentSize, con.Font.Style, con.Font.Unit);
@@ -447,20 +396,6 @@ namespace LearningEn
 
         }
 
-        private void Clb_MouseUp(object sender, MouseEventArgs e)
-        {
-            int index = Clb.IndexFromPoint(e.Location);
-            Ttp.Show(transList[index], Clb);
-            if (e.Button == MouseButtons.Right)
-            {
-                if (index >= 0)
-                {
-                    Clb.SelectedIndex = index;
-                    this.CmsWordList.Show(Cursor.Position.X, Cursor.Position.Y);
-                }
-            }
-        }
-
         /// <summary>
         /// 标记为会，并从列表中删除
         /// </summary>
@@ -502,52 +437,10 @@ namespace LearningEn
             }
         }
 
-        private void Tv_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            Point clickPoint = new Point(e.X, e.Y);
-            if (e.Button == MouseButtons.Right)
-            {
-                Tv.SelectedNode = Tv.GetNodeAt(clickPoint);
-                TreeNode treeNode = Tv.GetNodeAt(clickPoint);
-                if (treeNode != null)
-                {
-                    treeNode.ContextMenuStrip = CmsWordList;
-                    Tv.SelectedNode = treeNode;
-                }
-            }
-            if (e.Button == MouseButtons.Left)
-            {
-                foreach(TreeNode tn in Tv.Nodes)
-                {
-                    tn.Collapse();
-                    if (tn == e.Node)
-                    {
-                        if (!e.Node.IsExpanded)
-                        {
-                            e.Node.Expand();
-                        }
-                    }
-                }
-            }
-        }
-
         private void BtnSelectAll_Click(object sender, EventArgs e)
         {
             if (BtnSelectAll.Text == "全选")
             {
-                if (Clb.Items.Count == 0) { }
-                else
-                {
-                    foreach (TreeNode tn in Tv.Nodes)
-                    {
-                        tn.Checked = true;
-                    }
-                    for (int i = 0; i < Clb.Items.Count; i++)
-                    {
-                        Clb.SetItemChecked(i, true);
-                    }
-                    //BtnSelectAll.Text = "全不选";
-                }
                 if (LbxWord.Items.Count == 0) { }
                 else
                 {
@@ -560,14 +453,6 @@ namespace LearningEn
             }
             else
             {
-                foreach (TreeNode tn in Tv.Nodes)
-                {
-                    tn.Checked = false;
-                }
-                for (int i = 0; i < Clb.Items.Count; i++)
-                {
-                    Clb.SetItemChecked(i, false);
-                }
                 for (int i = 0; i < LbxWord.Items.Count; i++)
                 {
                     LbxWord.SetSelected(i, false);
@@ -578,75 +463,11 @@ namespace LearningEn
 
         private void TsmUnGrasp_Click(object sender, EventArgs e)
         {
-            //if (!graspList.Contains(Clb.SelectedItem.ToString()))
-            //{
-            //Console.WriteLine(Clb.SelectedItem.ToString());
-            //WordDataHelper.AddWordData(Clb.SelectedItem.ToString(), 0);
-            //WordDataHelper.AutoSubtractProgress(Clb.SelectedItem.ToString());
-            //Clb.ForeColor = Color.Red;
-            //this.Clb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            //this.Clb.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.Clb_DrawItem);
-
-            //}
-            //WordDataHelper.AddWordData(LbxWord.SelectedItem.ToString(), 1);
             WordDataHelper.AutoSubtractProgress(LbxWord.SelectedItem.ToString());
-        }
-
-        private void Clb_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            Console.WriteLine("drawItem");
-            e.DrawBackground();
-            if (ungraspList.Contains(Clb.Items[e.Index]))
-            {
-                e.Graphics.DrawString(((CheckedListBox)sender).Items[e.Index].ToString(), e.Font, new SolidBrush(Color.Red), e.Bounds);
-            }
-            else
-            {
-                e.Graphics.DrawString(((CheckedListBox)sender).Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
-            }
-            e.DrawFocusRectangle();
-        }
-
-        public class ColorCodedCheckedListBox : CheckedListBox
-        {
-            protected override void OnDrawItem(DrawItemEventArgs e)
-            {
-                DrawItemEventArgs e2 =
-                    new DrawItemEventArgs
-                    (
-                        e.Graphics,
-                        e.Font,
-                        new Rectangle(e.Bounds.Location, e.Bounds.Size),
-                        e.Index,
-                        e.State,
-                        e.ForeColor,
-                        this.CheckedIndices.Contains(e.Index) ? Color.Red : SystemColors.Window
-                    );
-                base.OnDrawItem(e2);
-            }
-        }
-
-        private void Clb_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void BtnGrasp_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < Clb.CheckedItems.Count; i++)
-            {
-                WordDataHelper.AddWordData(Clb.CheckedItems[i].ToString(), 0);
-                WordDataHelper.AutoAddProgress(Clb.CheckedItems[i].ToString());
-            }
-            for (int i = 0; i < Clb.Items.Count;i++)
-            {
-                if (Clb.GetItemChecked(i))
-                {
-                    Clb.Items.RemoveAt(i);
-                    transList.RemoveAt(i);
-                    i--;
-                }
-            }
             for (int i = 0; i < LbxWord.SelectedItems.Count; i++)
             {
                 WordDataHelper.AddWordData(LbxWord.SelectedItems[i].ToString(), 0);
@@ -665,12 +486,6 @@ namespace LearningEn
 
         private void BtnUngrasp_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < Clb.CheckedItems.Count; i++)
-            {
-                //Console.WriteLine(Clb.SelectedItem.ToString());
-                WordDataHelper.AddWordData(Clb.CheckedItems[i].ToString(), 1);
-                WordDataHelper.AutoSubtractProgress(Clb.CheckedItems[i].ToString());
-            }
             for (int i = 0; i < LbxWord.SelectedItems.Count; i++)
             {
                 WordDataHelper.AddWordData(LbxWord.SelectedItems[i].ToString(), 1);
@@ -690,23 +505,6 @@ namespace LearningEn
 
         private void BtnCool_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < Clb.CheckedItems.Count; i++)
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                    WordDataHelper.AddWordData(Clb.CheckedItems[i].ToString(), 0);
-                    WordDataHelper.AutoAddProgress(Clb.CheckedItems[i].ToString());
-                }
-            }
-            for (int i = 0; i < Clb.Items.Count; i++)
-            {
-                if (Clb.GetItemChecked(i))
-                {
-                    Clb.Items.RemoveAt(i);
-                    transList.RemoveAt(i);
-                    i--;
-                }
-            }
             for (int i = 0; i < LbxWord.SelectedItems.Count; i++)
             {
                 for (int j = 0; j < 10; j++)
@@ -734,7 +532,6 @@ namespace LearningEn
                 Ttp.Show(transList[index], LbxWord);
                 if (e.Button == MouseButtons.Right)
                 {
-                    Console.WriteLine("LbxWordRight");
                     if (index >= 0)
                     {
                         LbxWord.SelectedIndex = index;
@@ -742,7 +539,7 @@ namespace LearningEn
                     }
                 }
             }
-            catch(Exception exc) { }
+            catch { }
         }
 
         private void LbxWord_MouseDoubleClick(object sender, MouseEventArgs e)

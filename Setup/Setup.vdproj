@@ -15,6 +15,18 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_03B4FCD9E1024DD7B41DE6A6C7152D7D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0851768970C64BA19A608A5B83B97125"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_35D9F1EF40494D30B2EDC6B3BE871056"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -22,12 +34,6 @@
         "Entry"
         {
         "MsmKey" = "8:_475AACE7269A4C7DA579F3489FB594F7"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5E32033592B94D40B91847DC5B0475D4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,7 +57,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_86FB5AC9B5F1DCBAD82A7F1111E7844F"
+        "OwnerKey" = "8:_F0020FBA03E649A99A808225E27A5805"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_87739661F5A84E1F9D1C182726D647E7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9366E12771DB4AC392AF0248C4742087"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A578FF35AF1641AB846F74756008D88A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -75,12 +99,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CB5ACE58B2CA932B631DC907254FC259"
-        "OwnerKey" = "8:_F0020FBA03E649A99A808225E27A5805"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_DC89D737296A4D0AB3C47841FC94707B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -88,6 +106,12 @@
         "Entry"
         {
         "MsmKey" = "8:_F0020FBA03E649A99A808225E27A5805"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F0F5E9A9A2D34C79AB137155F7088309"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -105,6 +129,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_FAC768D5918A464381EE4DDD10C3DC2F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F0020FBA03E649A99A808225E27A5805"
         "MsmSig" = "8:_UNDEFINED"
@@ -112,7 +142,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CB5ACE58B2CA932B631DC907254FC259"
+        "OwnerKey" = "8:_86FB5AC9B5F1DCBAD82A7F1111E7844F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -216,6 +246,46 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_03B4FCD9E1024DD7B41DE6A6C7152D7D"
+            {
+            "SourcePath" = "8:..\\LearningEn\\Resources\\new.png"
+            "TargetName" = "8:new.png"
+            "Tag" = "8:"
+            "Folder" = "8:_1CECC78ACC09415E9C7141C68C87D46D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0851768970C64BA19A608A5B83B97125"
+            {
+            "SourcePath" = "8:..\\LearningEn\\Resources\\Beethoven_English.ico"
+            "TargetName" = "8:Beethoven_English.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_1CECC78ACC09415E9C7141C68C87D46D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_35D9F1EF40494D30B2EDC6B3BE871056"
             {
             "SourcePath" = "8:..\\LearningEn\\bin\\Debug\\Model.xml"
@@ -242,26 +312,6 @@
             "TargetName" = "8:Chinese acts shine at Glastonbury Festival.xml"
             "Tag" = "8:"
             "Folder" = "8:_BBBB80EA7A0B4CADAAB1E6EEE8A216E6"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5E32033592B94D40B91847DC5B0475D4"
-            {
-            "SourcePath" = "8:..\\icon\\Beethoven_English.ico"
-            "TargetName" = "8:Beethoven_English.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_001732FD16BB471691107AECD0906D58"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -336,12 +386,83 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_86FB5AC9B5F1DCBAD82A7F1111E7844F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AppHelper, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_86FB5AC9B5F1DCBAD82A7F1111E7844F"
+                    {
+                    "Name" = "8:AppHelper.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AppHelper.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_001732FD16BB471691107AECD0906D58"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_87739661F5A84E1F9D1C182726D647E7"
             {
             "SourcePath" = "8:..\\LearningEn\\bin\\Debug\\dictionary\\有道考研词典.xml"
             "TargetName" = "8:有道考研词典.xml"
             "Tag" = "8:"
             "Folder" = "8:_E17F971E469D40B989227FF63C7F3D28"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9366E12771DB4AC392AF0248C4742087"
+            {
+            "SourcePath" = "8:..\\LearningEn\\Resources\\save.png"
+            "TargetName" = "8:save.png"
+            "Tag" = "8:"
+            "Folder" = "8:_1CECC78ACC09415E9C7141C68C87D46D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A578FF35AF1641AB846F74756008D88A"
+            {
+            "SourcePath" = "8:..\\LearningEn\\Resources\\browser.png"
+            "TargetName" = "8:browser.png"
+            "Tag" = "8:"
+            "Folder" = "8:_1CECC78ACC09415E9C7141C68C87D46D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -416,23 +537,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CB5ACE58B2CA932B631DC907254FC259"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DC89D737296A4D0AB3C47841FC94707B"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AppHelper, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_CB5ACE58B2CA932B631DC907254FC259"
-                    {
-                    "Name" = "8:AppHelper.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:AppHelper.dll"
-            "TargetName" = "8:"
+            "SourcePath" = "8:..\\LearningEn\\bin\\Debug\\dictionary\\雅思托福词典.xml"
+            "TargetName" = "8:雅思托福词典.xml"
             "Tag" = "8:"
-            "Folder" = "8:_001732FD16BB471691107AECD0906D58"
+            "Folder" = "8:_E17F971E469D40B989227FF63C7F3D28"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -444,15 +554,15 @@
             "PackageAs" = "3:1"
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DC89D737296A4D0AB3C47841FC94707B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F0F5E9A9A2D34C79AB137155F7088309"
             {
-            "SourcePath" = "8:..\\LearningEn\\bin\\Debug\\dictionary\\雅思托福词典.xml"
-            "TargetName" = "8:雅思托福词典.xml"
+            "SourcePath" = "8:..\\LearningEn\\Resources\\transform.png"
+            "TargetName" = "8:transform.png"
             "Tag" = "8:"
-            "Folder" = "8:_E17F971E469D40B989227FF63C7F3D28"
+            "Folder" = "8:_1CECC78ACC09415E9C7141C68C87D46D"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -518,6 +628,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FAC768D5918A464381EE4DDD10C3DC2F"
+            {
+            "SourcePath" = "8:..\\LearningEn\\Resources\\Starsys24.png"
+            "TargetName" = "8:Starsys24.png"
+            "Tag" = "8:"
+            "Folder" = "8:_1CECC78ACC09415E9C7141C68C87D46D"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -534,6 +664,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_1CECC78ACC09415E9C7141C68C87D46D"
+                    {
+                    "Name" = "8:Resources"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_229C93477F864890B4330249EDD23693"
+                        "Folders"
+                        {
+                        }
+                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_338BAB888B8241E8A5BFFEBC7BB6B67C"
                     {
                     "Name" = "8:statistics"
@@ -669,7 +810,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_5E32033592B94D40B91847DC5B0475D4"
+        "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -783,7 +924,7 @@
             "Target" = "8:_F0020FBA03E649A99A808225E27A5805"
             "Folder" = "8:_1BC42DDAC1DB4BE0ADA85B71AC654A5E"
             "WorkingFolder" = "8:_001732FD16BB471691107AECD0906D58"
-            "Icon" = "8:_5E32033592B94D40B91847DC5B0475D4"
+            "Icon" = "8:_0851768970C64BA19A608A5B83B97125"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_449193CB4698444697EF0206E83C2DD9"
@@ -797,7 +938,7 @@
             "Target" = "8:_F0020FBA03E649A99A808225E27A5805"
             "Folder" = "8:_8B57EA732A8F43DFA1572BEEF35FF17D"
             "WorkingFolder" = "8:_001732FD16BB471691107AECD0906D58"
-            "Icon" = "8:_5E32033592B94D40B91847DC5B0475D4"
+            "Icon" = "8:_0851768970C64BA19A608A5B83B97125"
             "Feature" = "8:"
             }
         }

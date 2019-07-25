@@ -27,6 +27,10 @@ namespace LearningEn
             AppInfoHelper.UpdateDictList();
             dictList = AppInfoHelper.SelectDictList();
             wordbookList = AppInfoHelper.SelectWordbookList();
+            Console.WriteLine(AppInfoHelper.GetDefaultDict());
+            Console.WriteLine(AppInfoHelper.GetDefaultWordbook());
+            CbxDefaultDict.DataSource = AppInfoHelper.GetDictList();
+            CbxDefaultWordbook.DataSource = AppInfoHelper.GetWordbookList();
             InitialApp();
         }
 
@@ -86,10 +90,10 @@ namespace LearningEn
             CTBDict.Button = "浏览";
             CTBDict.OnOpen += new EventHandler(ReviseDictPath);
 
-            CbxDefaultDict.DataSource = AppInfoHelper.GetDictList();
+            //CbxDefaultDict.DataSource = AppInfoHelper.GetDictList();
+            //CbxDefaultDict.SelectedIndex = CbxDefaultDict.Items.IndexOf(AppInfoHelper.GetDefaultDict());
             CbxDefaultDict.Text = AppInfoHelper.GetDefaultDict();
-            CbxDefaultWordbook.DataSource = AppInfoHelper.GetWordbookList();
-            CbxDefaultWordbook.Text = AppInfoHelper.GetDefaultDict();
+            CbxDefaultWordbook.SelectedIndex = CbxDefaultWordbook.Items.IndexOf(AppInfoHelper.GetDefaultWordbook());
         }
 
         private void AddDict_Click(object sender, EventArgs e)
@@ -161,7 +165,7 @@ namespace LearningEn
                 AppInfoHelper.AlterWordbookList(wordbookList[i], AppInfoHelper.Dict.iswordbook, Convert.ToString(ClbWordbookSetting.GetItemChecked(i)));
             }
             CbxDefaultWordbook.DataSource = AppInfoHelper.GetWordbookList();
-            CbxDefaultWordbook.Text = AppInfoHelper.GetDefaultDict();
+            CbxDefaultWordbook.Text = AppInfoHelper.GetDefaultWordbook();
         }
 
         private void CbxDefaultDict_SelectedIndexChanged(object sender, EventArgs e)
@@ -174,11 +178,13 @@ namespace LearningEn
             {
                 AppInfoHelper.SetDefaultDict(CbxDefaultDict.Text);
             }
+            //CbxDefaultDict.Text = AppInfoHelper.GetDefaultDict();
         }
 
         private void CbxDefaultWordbook_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AppInfoHelper.SetDefaultWordbook(CbxDefaultDict.Text);
+            AppInfoHelper.SetDefaultWordbook(CbxDefaultWordbook.Text);
+            //CbxDefaultWordbook.Text = AppInfoHelper.GetDefaultWordbook();
         }
 
         private void CbxDefaultDict_MouseEnter(object sender, EventArgs e)

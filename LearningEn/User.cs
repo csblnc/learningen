@@ -128,13 +128,13 @@ namespace LearningEn
             XmlElement xElem1;
             XmlElement xElem2;
             xNode = xDoc.SelectSingleNode(String.Format("//{0}", xmlNode));//获取指定的xml子节点
-            Console.WriteLine(String.Format("//{0}", xmlNode));
+            //Console.WriteLine(String.Format("//{0}", xmlNode));
             xElem1 = (XmlElement) xNode.SelectSingleNode(String.Format("//{0}//add[@key='{1}']", xmlNode, fileName));//获取子节点中指定的子节点
             //如果能获取到节点，就修改节点的value值
             if (xElem1 != null)
             {
                 xElem1.SetAttribute("value", filePath);//给节点中的value属性赋值(修改操作)
-                Console.WriteLine("fileName已存在，创建value：" + filePath);
+                //Console.WriteLine("fileName已存在，创建value：" + filePath);
             }
             //如果不能获取到节点，就创建节点
             else
@@ -148,7 +148,7 @@ namespace LearningEn
             ConfigurationManager.RefreshSection("appSettings"); // 重新加载新的配置文件 
             ConfigurationManager.RefreshSection("Dict"); // 重新加载新的配置文件 
             ConfigurationManager.RefreshSection("Wordbook"); // 重新加载新的配置文件 
-            Console.WriteLine("保存成功！");
+            //Console.WriteLine("保存成功！");
         }
 
         private void TsmLoadWordbook_Click(object sender, EventArgs e)

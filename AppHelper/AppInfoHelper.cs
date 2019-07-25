@@ -70,7 +70,7 @@ namespace AppHelper
         /// <param name="value"></param>
         public static void AlterDictList(string dict, Dict type, string value)
         {
-            Console.WriteLine(dict + "  " + value);
+            //Console.WriteLine(dict + "  " + value);
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load(Environment.CurrentDirectory + "\\AppInfo.xml");
             XmlNodeList xmlnl = xdoc.SelectSingleNode("//DictList").ChildNodes;
@@ -164,10 +164,22 @@ namespace AppHelper
 
         public static string GetDefaultDict()
         {
-            string result = "有道词典";
+            string result = GetDefault("有道词典", "//DictList");
+            return result;
+        }
+
+        public static string GetDefaultWordbook()
+        {
+            string result = GetDefault("", "//WordbookList");
+            return result;
+        }
+
+        private static string GetDefault(string initstring, string nodename)
+        {
+            string result = initstring;
             XmlDocument xdoc = new XmlDocument();
-            xdoc.Load(Environment.CurrentDirectory+ "\\AppInfo.xml");
-            XmlNodeList xmlnl = xdoc.SelectSingleNode("//DictList").ChildNodes;
+            xdoc.Load(Environment.CurrentDirectory + "\\AppInfo.xml");
+            XmlNodeList xmlnl = xdoc.SelectSingleNode(nodename).ChildNodes;
             foreach (XmlNode node in xmlnl)
             {
                 XmlElement element = (XmlElement)node;
@@ -318,7 +330,7 @@ namespace AppHelper
             }
             for(int i = 0; i < dictlist.Count; i++)
             {
-                Console.WriteLine("\"" + dictlist[i] + "\"");
+                //Console.WriteLine("\"" + dictlist[i] + "\"");
             }
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load(Environment.CurrentDirectory + "\\AppInfo.xml");

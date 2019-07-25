@@ -24,7 +24,7 @@ namespace LearningEn
             string name = lb.Name;
             m_lastMPoint = MousePosition;
             m_lastPoint = lb.Location;
-            Console.WriteLine(lb.Name);
+            //Console.WriteLine(lb.Name);
         }
 
         private void label1_MouseMove(object sender, MouseEventArgs e)
@@ -66,7 +66,7 @@ namespace LearningEn
             // 生成随机Y坐标
             int y = r.Next(50, Height-50);
             // 将当前窗体设置为随机坐标
-            Console.WriteLine(String.Format("x={0}, y={1}", x.ToString(), y.ToString()));
+            //Console.WriteLine(String.Format("x={0}, y={1}", x.ToString(), y.ToString()));
             Point p = new System.Drawing.Point(x, y);
             return p;
         }

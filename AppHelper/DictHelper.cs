@@ -146,7 +146,7 @@ namespace AppHelper
                     if (xmlword[0].InnerXml == word)
                     {
                         XmlNodeList xmlnl = root.GetElementsByTagName("progress");
-                        Console.WriteLine(xmlnl[0].InnerXml);
+                        //Console.WriteLine(xmlnl[0].InnerXml);
                         xmlnl[0].InnerXml = progress;
                     }
                 }

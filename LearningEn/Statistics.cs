@@ -245,7 +245,7 @@ namespace LearningEn
             for (int i = 0; i < count; i++)
             {
                 result[i] = DateTime.Now.AddDays(-(count - i - 1)).ToString("yyyyMMdd");
-                Console.WriteLine(result[i]);
+                //Console.WriteLine(result[i]);
             }
             return result;
         }

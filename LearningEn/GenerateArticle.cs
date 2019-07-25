@@ -71,7 +71,7 @@ namespace LearningEn
         {
             if (TsbTransform.Text == "TXT")
             {
-                Console.WriteLine("Rtb已经显示");
+                //Console.WriteLine("Rtb已经显示");
                 Ste.Hide();
                 Rtb.Show();
                 TsbTransform.Text = "XML";
@@ -89,7 +89,7 @@ namespace LearningEn
         {
             if (TsbTransform.Text == "TXT")
             {
-                Console.WriteLine("Rtb已经显示");
+                //Console.WriteLine("Rtb已经显示");
                 Ste.Hide();
                 Rtb.Show();
                 TsbTransform.ToolTipText = "显示超文本视图";
@@ -108,11 +108,11 @@ namespace LearningEn
             ArticleCheck();
             if (save)
             {
-                Console.WriteLine("title = " + title);
+                //Console.WriteLine("title = " + title);
                 if (title.Trim() != "")
                 {
                     string filename = TsbTbx.Text + "\\" + title.Trim() + ".xml";
-                    Console.WriteLine("filename = " + filename);
+                    //Console.WriteLine("filename = " + filename);
                     if (File.Exists(filename))
                     {
                         DialogResult dr = MessageBox.Show("文件已存在，是否覆盖？", "保存", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -282,7 +282,7 @@ namespace LearningEn
         {
             for(int i = 0; i < Rtb.Lines.Length; i++)
             {
-                Console.WriteLine(i + " |" + Rtb.Lines[i].Trim());
+                //Console.WriteLine(i + " |" + Rtb.Lines[i].Trim());
             }
         }
     }

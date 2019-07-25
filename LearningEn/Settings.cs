@@ -43,14 +43,14 @@ namespace LearningEn
 
         private void MenuColor(Control l)
         {
-            Console.WriteLine("MenuColor");
-            Console.WriteLine(l.Name);
+            //Console.WriteLine("MenuColor");
+            //Console.WriteLine(l.Name);
             foreach (Control c in this.Controls)
             {
-                Console.WriteLine(c.Name);
+                //Console.WriteLine(c.Name);
                 if (c == l)
                 {
-                    Console.WriteLine("Find Label");
+                    //Console.WriteLine("Find Label");
                     c.BackColor = Color.Pink;
                 }
                 else

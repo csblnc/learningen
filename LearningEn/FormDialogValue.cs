@@ -15,7 +15,7 @@ namespace LearningEn
         private void BtnOK_Click(object sender, EventArgs e)
         {
             returnValue = TbxWord.Text;
-            Console.WriteLine(returnValue);
+            //Console.WriteLine(returnValue);
             control = true;
             this.Hide();
         }

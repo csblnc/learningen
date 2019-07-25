@@ -79,7 +79,7 @@ namespace AppHelper
         public static void AddWordLog(string word, WordLogType type)
         {
             GenerateWordLog();
-            Console.WriteLine(word + "  " + type.ToString());
+            //Console.WriteLine(word + "  " + type.ToString());
             string wordLogPath = GetWordLogPath(DateTime.Now);
             List<string> list = GetWordLog(wordLogPath, type);
             if (list.Contains(word)) { Console.WriteLine("列表包含"); }
@@ -92,7 +92,7 @@ namespace AppHelper
                 node.InnerText = word;
                 foreach (XmlElement xelm in root.ChildNodes)
                 {
-                    Console.WriteLine(xelm.Name);
+                    //Console.WriteLine(xelm.Name);
                     if (xelm.Name == type.ToString())
                     {
                         xelm.AppendChild(node);

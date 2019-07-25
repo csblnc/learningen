@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Lbx = new System.Windows.Forms.ListBox();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.CbxDictionary = new System.Windows.Forms.ComboBox();
             this.Tbx = new System.Windows.Forms.TextBox();
@@ -38,7 +37,6 @@
             this.TbxArticleContainer = new System.Windows.Forms.TextBox();
             this.TbxArticle = new System.Windows.Forms.TextBox();
             this.FbdSearch = new System.Windows.Forms.FolderBrowserDialog();
-            this.Tv = new System.Windows.Forms.TreeView();
             this.CmsWordList = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TsmPronunciation = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmGrasp = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +48,6 @@
             this.BtnGrasp = new System.Windows.Forms.Button();
             this.BtnUngrasp = new System.Windows.Forms.Button();
             this.BtnSelectAll = new System.Windows.Forms.Button();
-            this.Clb = new System.Windows.Forms.CheckedListBox();
             this.Ttp = new System.Windows.Forms.ToolTip(this.components);
             this.BtnCool = new System.Windows.Forms.Button();
             this.LbxWord = new System.Windows.Forms.ListBox();
@@ -59,29 +56,15 @@
             this.CmsWordList.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Lbx
-            // 
-            this.Lbx.BackColor = System.Drawing.SystemColors.Control;
-            this.Lbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Lbx.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Lbx.FormattingEnabled = true;
-            this.Lbx.ItemHeight = 25;
-            this.Lbx.Location = new System.Drawing.Point(64, 94);
-            this.Lbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Lbx.Name = "Lbx";
-            this.Lbx.Size = new System.Drawing.Size(933, 400);
-            this.Lbx.TabIndex = 1;
-            // 
             // BtnSearch
             // 
             this.BtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnSearch.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearch.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnSearch.Location = new System.Drawing.Point(355, 26);
-            this.BtnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnSearch.Location = new System.Drawing.Point(266, 21);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(100, 35);
+            this.BtnSearch.Size = new System.Drawing.Size(75, 28);
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.Text = "浏览";
             this.BtnSearch.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -96,10 +79,9 @@
             this.CbxDictionary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CbxDictionary.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.CbxDictionary.FormattingEnabled = true;
-            this.CbxDictionary.Location = new System.Drawing.Point(724, 26);
-            this.CbxDictionary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CbxDictionary.Location = new System.Drawing.Point(543, 21);
             this.CbxDictionary.Name = "CbxDictionary";
-            this.CbxDictionary.Size = new System.Drawing.Size(272, 33);
+            this.CbxDictionary.Size = new System.Drawing.Size(205, 28);
             this.CbxDictionary.TabIndex = 5;
             this.CbxDictionary.SelectedIndexChanged += new System.EventHandler(this.CbxDictionary_SelectedIndexChanged);
             this.CbxDictionary.MouseEnter += new System.EventHandler(this.CbxDictionary_MouseEnter);
@@ -110,13 +92,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Tbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Tbx.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tbx.Location = new System.Drawing.Point(64, 96);
-            this.Tbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Tbx.Location = new System.Drawing.Point(48, 77);
             this.Tbx.Multiline = true;
             this.Tbx.Name = "Tbx";
             this.Tbx.ReadOnly = true;
             this.Tbx.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.Tbx.Size = new System.Drawing.Size(660, 400);
+            this.Tbx.Size = new System.Drawing.Size(495, 320);
             this.Tbx.TabIndex = 6;
             this.Tbx.Click += new System.EventHandler(this.Tbx_Click);
             // 
@@ -126,22 +107,21 @@
             this.CmsTextBox.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.添加到单词列表ToolStripMenuItem});
             this.CmsTextBox.Name = "CmsTextBox";
-            this.CmsTextBox.Size = new System.Drawing.Size(184, 28);
+            this.CmsTextBox.Size = new System.Drawing.Size(161, 26);
             // 
             // 添加到单词列表ToolStripMenuItem
             // 
             this.添加到单词列表ToolStripMenuItem.Name = "添加到单词列表ToolStripMenuItem";
-            this.添加到单词列表ToolStripMenuItem.Size = new System.Drawing.Size(183, 24);
+            this.添加到单词列表ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.添加到单词列表ToolStripMenuItem.Text = "添加到单词列表";
             // 
             // TbxArticleContainer
             // 
             this.TbxArticleContainer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxArticleContainer.Font = new System.Drawing.Font("宋体", 15F);
-            this.TbxArticleContainer.Location = new System.Drawing.Point(64, 26);
-            this.TbxArticleContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbxArticleContainer.Location = new System.Drawing.Point(48, 21);
             this.TbxArticleContainer.Name = "TbxArticleContainer";
-            this.TbxArticleContainer.Size = new System.Drawing.Size(283, 29);
+            this.TbxArticleContainer.Size = new System.Drawing.Size(212, 23);
             this.TbxArticleContainer.TabIndex = 7;
             // 
             // TbxArticle
@@ -149,32 +129,11 @@
             this.TbxArticle.BackColor = System.Drawing.SystemColors.Window;
             this.TbxArticle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TbxArticle.Font = new System.Drawing.Font("宋体", 15F);
-            this.TbxArticle.Location = new System.Drawing.Point(64, 29);
-            this.TbxArticle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbxArticle.Location = new System.Drawing.Point(48, 23);
             this.TbxArticle.Name = "TbxArticle";
             this.TbxArticle.ReadOnly = true;
-            this.TbxArticle.Size = new System.Drawing.Size(283, 29);
+            this.TbxArticle.Size = new System.Drawing.Size(212, 23);
             this.TbxArticle.TabIndex = 9;
-            // 
-            // Tv
-            // 
-            this.Tv.BackColor = System.Drawing.SystemColors.Control;
-            this.Tv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Tv.CheckBoxes = true;
-            this.Tv.ContextMenuStrip = this.CmsWordList;
-            this.Tv.DrawMode = System.Windows.Forms.TreeViewDrawMode.OwnerDrawAll;
-            this.Tv.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tv.LabelEdit = true;
-            this.Tv.Location = new System.Drawing.Point(724, 96);
-            this.Tv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Tv.Name = "Tv";
-            this.Tv.ShowPlusMinus = false;
-            this.Tv.ShowRootLines = false;
-            this.Tv.Size = new System.Drawing.Size(272, 361);
-            this.Tv.TabIndex = 10;
-            this.Tv.Visible = false;
-            this.Tv.DrawNode += new System.Windows.Forms.DrawTreeNodeEventHandler(this.Tv_DrawNode);
-            this.Tv.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Tv_NodeMouseClick);
             // 
             // CmsWordList
             // 
@@ -188,53 +147,53 @@
             this.TsmRespellingWord,
             this.TsmAddWord});
             this.CmsWordList.Name = "CmsWordList";
-            this.CmsWordList.Size = new System.Drawing.Size(244, 200);
+            this.CmsWordList.Size = new System.Drawing.Size(209, 158);
             // 
             // TsmPronunciation
             // 
             this.TsmPronunciation.Name = "TsmPronunciation";
-            this.TsmPronunciation.Size = new System.Drawing.Size(243, 24);
+            this.TsmPronunciation.Size = new System.Drawing.Size(208, 22);
             this.TsmPronunciation.Text = "发音";
             this.TsmPronunciation.Click += new System.EventHandler(this.TsmPronunciation_Click);
             // 
             // TsmGrasp
             // 
             this.TsmGrasp.Name = "TsmGrasp";
-            this.TsmGrasp.Size = new System.Drawing.Size(243, 24);
+            this.TsmGrasp.Size = new System.Drawing.Size(208, 22);
             this.TsmGrasp.Text = "标记为会";
             this.TsmGrasp.Click += new System.EventHandler(this.TsmGrasp_Click);
             // 
             // TsmUnGrasp
             // 
             this.TsmUnGrasp.Name = "TsmUnGrasp";
-            this.TsmUnGrasp.Size = new System.Drawing.Size(243, 24);
+            this.TsmUnGrasp.Size = new System.Drawing.Size(208, 22);
             this.TsmUnGrasp.Text = "标记为不会";
             this.TsmUnGrasp.Click += new System.EventHandler(this.TsmUnGrasp_Click);
             // 
             // TsmAddToWordbook
             // 
             this.TsmAddToWordbook.Name = "TsmAddToWordbook";
-            this.TsmAddToWordbook.Size = new System.Drawing.Size(243, 24);
+            this.TsmAddToWordbook.Size = new System.Drawing.Size(208, 22);
             this.TsmAddToWordbook.Text = "添加到单词本（未开放）";
             this.TsmAddToWordbook.Click += new System.EventHandler(this.TsmAddToWordbook_Click);
             // 
             // TsmWordInfo
             // 
             this.TsmWordInfo.Name = "TsmWordInfo";
-            this.TsmWordInfo.Size = new System.Drawing.Size(243, 24);
+            this.TsmWordInfo.Size = new System.Drawing.Size(208, 22);
             this.TsmWordInfo.Text = "查看详细信息（未开放）";
             // 
             // TsmRespellingWord
             // 
             this.TsmRespellingWord.Name = "TsmRespellingWord";
-            this.TsmRespellingWord.Size = new System.Drawing.Size(243, 24);
+            this.TsmRespellingWord.Size = new System.Drawing.Size(208, 22);
             this.TsmRespellingWord.Text = "修改单词";
             this.TsmRespellingWord.Click += new System.EventHandler(this.TsmRespellingWord_Click);
             // 
             // TsmAddWord
             // 
             this.TsmAddWord.Name = "TsmAddWord";
-            this.TsmAddWord.Size = new System.Drawing.Size(243, 24);
+            this.TsmAddWord.Size = new System.Drawing.Size(208, 22);
             this.TsmAddWord.Text = "添加单词";
             this.TsmAddWord.Click += new System.EventHandler(this.TsmAddWord_Click);
             // 
@@ -245,10 +204,9 @@
             this.BtnGrasp.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BtnGrasp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGrasp.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.BtnGrasp.Location = new System.Drawing.Point(856, 464);
-            this.BtnGrasp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnGrasp.Location = new System.Drawing.Point(642, 371);
             this.BtnGrasp.Name = "BtnGrasp";
-            this.BtnGrasp.Size = new System.Drawing.Size(67, 32);
+            this.BtnGrasp.Size = new System.Drawing.Size(50, 26);
             this.BtnGrasp.TabIndex = 15;
             this.BtnGrasp.Text = "会";
             this.BtnGrasp.UseVisualStyleBackColor = true;
@@ -261,10 +219,9 @@
             this.BtnUngrasp.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BtnUngrasp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUngrasp.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.BtnUngrasp.Location = new System.Drawing.Point(931, 464);
-            this.BtnUngrasp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnUngrasp.Location = new System.Drawing.Point(698, 371);
             this.BtnUngrasp.Name = "BtnUngrasp";
-            this.BtnUngrasp.Size = new System.Drawing.Size(67, 32);
+            this.BtnUngrasp.Size = new System.Drawing.Size(50, 26);
             this.BtnUngrasp.TabIndex = 16;
             this.BtnUngrasp.Text = "不会";
             this.BtnUngrasp.UseVisualStyleBackColor = true;
@@ -277,33 +234,13 @@
             this.BtnSelectAll.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.BtnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSelectAll.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.BtnSelectAll.Location = new System.Drawing.Point(724, 464);
-            this.BtnSelectAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnSelectAll.Location = new System.Drawing.Point(543, 371);
             this.BtnSelectAll.Name = "BtnSelectAll";
-            this.BtnSelectAll.Size = new System.Drawing.Size(67, 32);
+            this.BtnSelectAll.Size = new System.Drawing.Size(50, 26);
             this.BtnSelectAll.TabIndex = 17;
             this.BtnSelectAll.Text = "全选";
             this.BtnSelectAll.UseVisualStyleBackColor = true;
             this.BtnSelectAll.Click += new System.EventHandler(this.BtnSelectAll_Click);
-            // 
-            // Clb
-            // 
-            this.Clb.BackColor = System.Drawing.SystemColors.Control;
-            this.Clb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Clb.CheckOnClick = true;
-            this.Clb.Font = new System.Drawing.Font("Arial", 12F);
-            this.Clb.FormattingEnabled = true;
-            this.Clb.Location = new System.Drawing.Point(724, 96);
-            this.Clb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Clb.Name = "Clb";
-            this.Clb.Size = new System.Drawing.Size(273, 325);
-            this.Clb.TabIndex = 14;
-            this.Clb.Visible = false;
-            this.Clb.Click += new System.EventHandler(this.Clb_Click);
-            this.Clb.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.Clb_DrawItem);
-            this.Clb.MouseEnter += new System.EventHandler(this.Clb_MouseEnter);
-            this.Clb.MouseHover += new System.EventHandler(this.Clb_MouseHover);
-            this.Clb.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Clb_MouseUp);
             // 
             // BtnCool
             // 
@@ -311,9 +248,8 @@
             this.BtnCool.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCool.Font = new System.Drawing.Font("宋体", 10.5F);
             this.BtnCool.Location = new System.Drawing.Point(0, 0);
-            this.BtnCool.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnCool.Name = "BtnCool";
-            this.BtnCool.Size = new System.Drawing.Size(7, 6);
+            this.BtnCool.Size = new System.Drawing.Size(5, 5);
             this.BtnCool.TabIndex = 18;
             this.BtnCool.Text = "一键全会";
             this.BtnCool.UseVisualStyleBackColor = true;
@@ -325,12 +261,12 @@
             this.LbxWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LbxWord.Font = new System.Drawing.Font("Arial", 12F);
             this.LbxWord.FormattingEnabled = true;
-            this.LbxWord.ItemHeight = 23;
-            this.LbxWord.Location = new System.Drawing.Point(724, 94);
-            this.LbxWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LbxWord.ItemHeight = 18;
+            this.LbxWord.Location = new System.Drawing.Point(543, 75);
+            this.LbxWord.Margin = new System.Windows.Forms.Padding(2);
             this.LbxWord.Name = "LbxWord";
             this.LbxWord.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.LbxWord.Size = new System.Drawing.Size(272, 345);
+            this.LbxWord.Size = new System.Drawing.Size(204, 288);
             this.LbxWord.TabIndex = 19;
             this.LbxWord.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.LbxWord_MouseDoubleClick);
             this.LbxWord.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LbxWord_MouseUp);
@@ -338,35 +274,30 @@
             // MPB
             // 
             this.MPB.BarColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.MPB.Location = new System.Drawing.Point(464, 26);
-            this.MPB.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.MPB.Location = new System.Drawing.Point(348, 21);
+            this.MPB.Margin = new System.Windows.Forms.Padding(4);
             this.MPB.Name = "MPB";
-            this.MPB.Size = new System.Drawing.Size(251, 35);
+            this.MPB.Size = new System.Drawing.Size(188, 28);
             this.MPB.TabIndex = 12;
             this.MPB.Value = 1;
             // 
             // ArticleStudy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.LbxWord);
             this.Controls.Add(this.BtnCool);
-            this.Controls.Add(this.Clb);
             this.Controls.Add(this.BtnSelectAll);
             this.Controls.Add(this.BtnUngrasp);
             this.Controls.Add(this.BtnGrasp);
             this.Controls.Add(this.MPB);
-            this.Controls.Add(this.Tv);
             this.Controls.Add(this.TbxArticle);
             this.Controls.Add(this.TbxArticleContainer);
             this.Controls.Add(this.Tbx);
             this.Controls.Add(this.CbxDictionary);
             this.Controls.Add(this.BtnSearch);
-            this.Controls.Add(this.Lbx);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ArticleStudy";
-            this.Size = new System.Drawing.Size(1067, 532);
-            this.Load += new System.EventHandler(this.ArticleStudy_Load);
+            this.Size = new System.Drawing.Size(800, 426);
             this.CmsTextBox.ResumeLayout(false);
             this.CmsWordList.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -375,14 +306,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.ListBox Lbx;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.ComboBox CbxDictionary;
         private System.Windows.Forms.TextBox Tbx;
         private System.Windows.Forms.TextBox TbxArticleContainer;
         private System.Windows.Forms.TextBox TbxArticle;
         private System.Windows.Forms.FolderBrowserDialog FbdSearch;
-        private System.Windows.Forms.TreeView Tv;
         private MyProgressBar MPB;
         private System.Windows.Forms.ContextMenuStrip CmsWordList;
         private System.Windows.Forms.ToolStripMenuItem TsmGrasp;
@@ -396,7 +325,6 @@
         private System.Windows.Forms.ToolStripMenuItem 添加到单词列表ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TsmRespellingWord;
         private System.Windows.Forms.ToolStripMenuItem TsmAddWord;
-        private System.Windows.Forms.CheckedListBox Clb;
         private System.Windows.Forms.ToolTip Ttp;
         private System.Windows.Forms.Button BtnCool;
         private System.Windows.Forms.ListBox LbxWord;

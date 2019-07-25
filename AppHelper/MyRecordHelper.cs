@@ -59,7 +59,7 @@ namespace AppHelper
         public static List<string> ReadWordbookList()
         {
             List<string> result = new List<string>();
-            Console.WriteLine(AppInfoHelper.GetMyWordBookFolder());
+            //Console.WriteLine(AppInfoHelper.GetMyWordBookFolder());
             if (Directory.Exists(AppInfoHelper.GetMyWordBookFolder()))
             {
                 string[] files = Directory.GetFiles(AppInfoHelper.GetMyWordBookFolder());
