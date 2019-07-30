@@ -43,11 +43,13 @@
     <Compile Include="DictHelper.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="MyRecordHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StatisticsHelper.cs" />
     <Compile Include="WordDataHelper.cs" />
     <Compile Include="ArticleDataHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />

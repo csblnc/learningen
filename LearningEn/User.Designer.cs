@@ -176,7 +176,7 @@
             this.MainMenuStrip = this.Mns;
             this.MinimumSize = new System.Drawing.Size(816, 487);
             this.Name = "User";
-            this.Text = "V1.0.38 贝多芬究极无敌单词终结者限量版采用电脑大屏死记硬背法告别传统死记硬背不含转基因百年老字号妈妈再也不用担心我的英语单词是您背诵单词的好伴侣";
+            this.Text = "V1.0.41 贝多芬究极无敌单词终结者限量版采用电脑大屏死记硬背法告别传统死记硬背不含转基因百年老字号妈妈再也不用担心我的英语单词是您背诵单词的好伴侣";
             this.Load += new System.EventHandler(this.User_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.User_KeyPress);
             this.Resize += new System.EventHandler(this.User_Resize);
