@@ -32,8 +32,6 @@
             this.Mns = new System.Windows.Forms.MenuStrip();
             this.TsmRecite = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmWordBook = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmRandomRecite = new System.Windows.Forms.ToolStripMenuItem();
-            this.TsmMemoryWrite = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmReadArticle = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmStatistic = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,8 +59,7 @@
             this.测试ToolStripMenuItem});
             this.Mns.Location = new System.Drawing.Point(0, 0);
             this.Mns.Name = "Mns";
-            this.Mns.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.Mns.Size = new System.Drawing.Size(1067, 35);
+            this.Mns.Size = new System.Drawing.Size(800, 29);
             this.Mns.TabIndex = 3;
             this.Mns.Text = "menuStrip1";
             // 
@@ -70,53 +67,37 @@
             // 
             this.TsmRecite.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsmWordBook,
-            this.TsmRandomRecite,
-            this.TsmMemoryWrite,
             this.TsmReadArticle});
             this.TsmRecite.Name = "TsmRecite";
-            this.TsmRecite.Size = new System.Drawing.Size(84, 31);
+            this.TsmRecite.Size = new System.Drawing.Size(70, 25);
             this.TsmRecite.Text = "背单词";
             this.TsmRecite.Click += new System.EventHandler(this.TsmRecite_Click);
             // 
             // TsmWordBook
             // 
             this.TsmWordBook.Name = "TsmWordBook";
-            this.TsmWordBook.Size = new System.Drawing.Size(290, 32);
+            this.TsmWordBook.Size = new System.Drawing.Size(180, 26);
             this.TsmWordBook.Text = "单词书";
             this.TsmWordBook.Click += new System.EventHandler(this.TsmWordBook_Click);
-            // 
-            // TsmRandomRecite
-            // 
-            this.TsmRandomRecite.Name = "TsmRandomRecite";
-            this.TsmRandomRecite.Size = new System.Drawing.Size(290, 32);
-            this.TsmRandomRecite.Text = "随机背单词（未开放）";
-            this.TsmRandomRecite.Click += new System.EventHandler(this.TsmRandomRecite_Click);
-            // 
-            // TsmMemoryWrite
-            // 
-            this.TsmMemoryWrite.Name = "TsmMemoryWrite";
-            this.TsmMemoryWrite.Size = new System.Drawing.Size(290, 32);
-            this.TsmMemoryWrite.Text = "单词默写（未开放）";
-            this.TsmMemoryWrite.Click += new System.EventHandler(this.TsmMemoryWrite_Click);
             // 
             // TsmReadArticle
             // 
             this.TsmReadArticle.Name = "TsmReadArticle";
-            this.TsmReadArticle.Size = new System.Drawing.Size(290, 32);
+            this.TsmReadArticle.Size = new System.Drawing.Size(180, 26);
             this.TsmReadArticle.Text = "文章阅读";
             this.TsmReadArticle.Click += new System.EventHandler(this.TsmReadArticle_Click);
             // 
             // TsmSearch
             // 
             this.TsmSearch.Name = "TsmSearch";
-            this.TsmSearch.Size = new System.Drawing.Size(84, 31);
+            this.TsmSearch.Size = new System.Drawing.Size(70, 25);
             this.TsmSearch.Text = "查单词";
             this.TsmSearch.Click += new System.EventHandler(this.TsmSearch_Click);
             // 
             // TsmStatistic
             // 
             this.TsmStatistic.Name = "TsmStatistic";
-            this.TsmStatistic.Size = new System.Drawing.Size(104, 31);
+            this.TsmStatistic.Size = new System.Drawing.Size(86, 25);
             this.TsmStatistic.Text = "统计视图";
             this.TsmStatistic.Click += new System.EventHandler(this.TsmStatistic_Click);
             // 
@@ -129,46 +110,46 @@
             this.TsmMoreSettings,
             this.TsmTools});
             this.TsmSetting.Name = "TsmSetting";
-            this.TsmSetting.Size = new System.Drawing.Size(64, 31);
+            this.TsmSetting.Size = new System.Drawing.Size(54, 25);
             this.TsmSetting.Text = "设置";
             // 
             // TsmLoadDict
             // 
             this.TsmLoadDict.Name = "TsmLoadDict";
-            this.TsmLoadDict.Size = new System.Drawing.Size(290, 32);
+            this.TsmLoadDict.Size = new System.Drawing.Size(240, 26);
             this.TsmLoadDict.Text = "加载词典";
             this.TsmLoadDict.Click += new System.EventHandler(this.TsmLoadDict_Click);
             // 
             // TsmLoadWordbook
             // 
             this.TsmLoadWordbook.Name = "TsmLoadWordbook";
-            this.TsmLoadWordbook.Size = new System.Drawing.Size(290, 32);
+            this.TsmLoadWordbook.Size = new System.Drawing.Size(240, 26);
             this.TsmLoadWordbook.Text = "加载单词书（未开放）";
             this.TsmLoadWordbook.Click += new System.EventHandler(this.TsmLoadWordbook_Click);
             // 
             // Tss
             // 
             this.Tss.Name = "Tss";
-            this.Tss.Size = new System.Drawing.Size(287, 6);
+            this.Tss.Size = new System.Drawing.Size(237, 6);
             // 
             // TsmMoreSettings
             // 
             this.TsmMoreSettings.Name = "TsmMoreSettings";
-            this.TsmMoreSettings.Size = new System.Drawing.Size(290, 32);
+            this.TsmMoreSettings.Size = new System.Drawing.Size(240, 26);
             this.TsmMoreSettings.Text = "更多设置";
             this.TsmMoreSettings.Click += new System.EventHandler(this.TsmMoreSettings_Click);
             // 
             // TsmTools
             // 
             this.TsmTools.Name = "TsmTools";
-            this.TsmTools.Size = new System.Drawing.Size(290, 32);
+            this.TsmTools.Size = new System.Drawing.Size(240, 26);
             this.TsmTools.Text = "工具";
             this.TsmTools.Click += new System.EventHandler(this.TsmTools_Click);
             // 
             // 测试ToolStripMenuItem
             // 
             this.测试ToolStripMenuItem.Name = "测试ToolStripMenuItem";
-            this.测试ToolStripMenuItem.Size = new System.Drawing.Size(64, 31);
+            this.测试ToolStripMenuItem.Size = new System.Drawing.Size(54, 25);
             this.测试ToolStripMenuItem.Text = "测试";
             this.测试ToolStripMenuItem.Click += new System.EventHandler(this.测试ToolStripMenuItem_Click);
             // 
@@ -176,11 +157,9 @@
             // 
             this.Gbx.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Gbx.Location = new System.Drawing.Point(0, 40);
-            this.Gbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Gbx.Location = new System.Drawing.Point(0, 32);
             this.Gbx.Name = "Gbx";
-            this.Gbx.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Gbx.Size = new System.Drawing.Size(1067, 522);
+            this.Gbx.Size = new System.Drawing.Size(800, 418);
             this.Gbx.TabIndex = 4;
             this.Gbx.TabStop = false;
             this.Gbx.Paint += new System.Windows.Forms.PaintEventHandler(this.Gbx_Paint);
@@ -188,15 +167,14 @@
             // 
             // User
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.Gbx);
             this.Controls.Add(this.Mns);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Mns;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1082, 599);
+            this.MinimumSize = new System.Drawing.Size(816, 487);
             this.Name = "User";
             this.Text = "V1.0.38 贝多芬究极无敌单词终结者限量版采用电脑大屏死记硬背法告别传统死记硬背不含转基因百年老字号妈妈再也不用担心我的英语单词是您背诵单词的好伴侣";
             this.Load += new System.EventHandler(this.User_Load);
@@ -213,8 +191,6 @@
         private System.Windows.Forms.MenuStrip Mns;
         private System.Windows.Forms.ToolStripMenuItem TsmRecite;
         private System.Windows.Forms.ToolStripMenuItem TsmWordBook;
-        private System.Windows.Forms.ToolStripMenuItem TsmRandomRecite;
-        private System.Windows.Forms.ToolStripMenuItem TsmMemoryWrite;
         private System.Windows.Forms.ToolStripMenuItem TsmSearch;
         private System.Windows.Forms.ToolStripMenuItem TsmStatistic;
         private System.Windows.Forms.GroupBox Gbx;

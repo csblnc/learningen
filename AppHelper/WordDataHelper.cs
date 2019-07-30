@@ -172,6 +172,7 @@ namespace AppHelper
             public string word { get; set; }
             public string trans { get; set; }
             public int num { get; set; }
+            public int count { get; set; }
         }
 
         public static List<WordList> GenerateWordbook(string path)
@@ -186,6 +187,7 @@ namespace AppHelper
                 s.word = list[i].word + " " + list[i].phonetic;
                 s.trans = list[i].trans;
                 s.num = list[i].progress;
+                s.count = i;
                 //Console.WriteLine(list[i].line + "\t" + s);
                 word.Add(s);
             }

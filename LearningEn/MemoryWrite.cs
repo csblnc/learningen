@@ -14,7 +14,7 @@ using System.Speech.Synthesis;
 
 namespace LearningEn
 {
-    public partial class Wordbook : UserControl
+    public partial class MemoryWrite : UserControl
     {
         public static char keyData;
         private List<string> wordbookList;
@@ -28,18 +28,14 @@ namespace LearningEn
         private List<string> wordbooklist;
         private Label currentlabel;
         List<WordDataHelper.WordList> l = new List<WordDataHelper.WordList>();
-        private bool ismemory;
-        private Color wordcolor;
 
         //todo:单词本的翻译显示不全
         //todo:单词本乱序查看
         //todo:单词默写
 
-        public Wordbook()
+        public MemoryWrite()
         {
             InitializeComponent();
-            ismemory = true;
-            wordcolor = Color.Black;
             wordbookList = DictHelper.ReadDictList();
             wordbookDict = DictHelper.ReadDictDict();
             formWidth = 800;
@@ -136,7 +132,7 @@ namespace LearningEn
                             l[k].Text = "";
                         }
                         Point p = WordPoint(i, j, x);
-                        AddLable(l[k], p, list[current + k].index.ToString(), l[k].Text, list[current + k].progress);
+                        AddLable(l[k], p, l[k].Text, list[current + k].progress);
                     }
                 }
             }
@@ -146,16 +142,12 @@ namespace LearningEn
             }
         }
 
-        public void AddLable(Label label1, Point p, string index, string text, int progress)
+        public void AddLable(Label label1, Point p, string text, int progress)
         {
             label1.BringToFront();
             label1.AutoSize = true;
             label1.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
             label1.Location = p;
-            //label1.Size = new System.Drawing.Size(74, 21);
-            label1.TabIndex = 21;
-            label1.Text = text;
-            label1.Parent = PnlWord;
             if (progress == -5)
             {
                 label1.MouseDown += new MouseEventHandler(LabelMouseDown);
@@ -165,15 +157,11 @@ namespace LearningEn
                 label1.ContextMenuStrip = Cms;
                 label1.MouseDown += new MouseEventHandler(LabelRightDown);
                 label1.ForeColor = SetColor(text);
-                if (ismemory)
-                {
-                    label1.Text = text;
-                }
-                else
-                {
-                    label1.Text = index;
-                }
             }
+            //label1.Size = new System.Drawing.Size(74, 21);
+            label1.TabIndex = 21;
+            label1.Text = text;
+            label1.Parent = PnlWord;
             //label = label1;
             PnlWord.Controls.Add(label1);
             addTag(label1);
@@ -321,15 +309,6 @@ namespace LearningEn
                     Single currentSize = System.Convert.ToSingle(mytag[4]);//字体大小
                     con.Font = new Font(con.Font.Name, currentSize, con.Font.Style, con.Font.Unit);
                 }
-                else if (con == BtnMemoryModel)
-                {
-                    con.Width = Convert.ToInt32(mytag[0]);
-                    con.Height = Convert.ToInt32(mytag[1]);
-                    con.Left = Convert.ToInt32(mytag[2])+ (int)(formWidthN - formWidth) / 2;
-                    con.Top = Convert.ToInt32(mytag[3]);
-                    Single currentSize = System.Convert.ToSingle(mytag[4]);//字体大小
-                    con.Font = new Font(con.Font.Name, currentSize, con.Font.Style, con.Font.Unit);
-                }
             }
         }
         #endregion
@@ -338,18 +317,17 @@ namespace LearningEn
         {
             public string str { get; set; }
             public int progress { get; set; }
-            public int index { get; set; }
         }
 
         private void ShowFunction()
         {
+
             list = new List<WordStructure>();
             for (int i = 0; i < l.Count; i++)
             {
                 WordStructure ws = new WordStructure();
                 ws.str = l[i].word;
                 ws.progress = l[i].num;
-                ws.index = i;
                 list.Add(ws);
                 string[] s = l[i].trans.Split(new string[] { "\r\n" }, StringSplitOptions.None);
                 for (int j = 0; j < s.Length; j++)
@@ -512,22 +490,6 @@ namespace LearningEn
         private void PnlWord_Click(object sender, EventArgs e)
         {
             PnlWord.Focus();
-        }
-
-        private void BtnMemoryModel_Click(object sender, EventArgs e)
-        {
-            if (ismemory)
-            {
-                ismemory = false;
-                BtnMemoryModel.Text = "学习模式";
-                ShowWord();
-            }
-            else
-            {
-                ismemory = true;
-                BtnMemoryModel.Text = "默写模式";
-                ShowWord();
-            }
         }
     }
 }

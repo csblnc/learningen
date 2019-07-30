@@ -1,6 +1,6 @@
 ﻿namespace LearningEn
 {
-    partial class Wordbook
+    partial class MemoryWrite
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -42,7 +42,6 @@
             this.TsmUngrasp = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmAddToWordbook = new System.Windows.Forms.ToolStripMenuItem();
             this.TsmWordInfo = new System.Windows.Forms.ToolStripMenuItem();
-            this.BtnMemoryModel = new System.Windows.Forms.Button();
             this.Pnl.SuspendLayout();
             this.Cms.SuspendLayout();
             this.SuspendLayout();
@@ -177,27 +176,10 @@
             this.TsmWordInfo.Size = new System.Drawing.Size(208, 22);
             this.TsmWordInfo.Text = "查看详细信息（未开放）";
             // 
-            // BtnMemoryModel
-            // 
-            this.BtnMemoryModel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnMemoryModel.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.BtnMemoryModel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnMemoryModel.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.BtnMemoryModel.Location = new System.Drawing.Point(259, 23);
-            this.BtnMemoryModel.Name = "BtnMemoryModel";
-            this.BtnMemoryModel.Size = new System.Drawing.Size(81, 28);
-            this.BtnMemoryModel.TabIndex = 21;
-            this.BtnMemoryModel.Text = "默写模式";
-            this.BtnMemoryModel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnMemoryModel.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.BtnMemoryModel.UseVisualStyleBackColor = true;
-            this.BtnMemoryModel.Click += new System.EventHandler(this.BtnMemoryModel_Click);
-            // 
             // Wordbook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.BtnMemoryModel);
             this.Controls.Add(this.PnlWord);
             this.Controls.Add(this.LblPages);
             this.Controls.Add(this.Pnl);
@@ -231,6 +213,5 @@
         private System.Windows.Forms.ToolStripMenuItem TsmAddToWordbook;
         private System.Windows.Forms.ToolStripMenuItem TsmPronunciation;
         private System.Windows.Forms.ToolStripMenuItem TsmWordInfo;
-        private System.Windows.Forms.Button BtnMemoryModel;
     }
 }

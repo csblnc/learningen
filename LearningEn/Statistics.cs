@@ -46,9 +46,10 @@ namespace LearningEn
         //todo:图例消失了
         public void CreateImage()
         {
-            int height = 500, width = 900;
+            int height = 400, width = 800;
             int YNum = 10;
             int GroupNum = 7;
+            int verticalStartLine = 20;
 
             int[] countgrasp = StatisticsHelper.GetWorkLoad(GroupNum, StatisticsHelper.WordLogType.grasp);
             int[] countungrasp = StatisticsHelper.GetWorkLoad(GroupNum, StatisticsHelper.WordLogType.ungrasp);
@@ -82,10 +83,10 @@ namespace LearningEn
                     x = x + 40;
                 }
                 x = 60;
-                g.DrawLine(penOuter, x, 80, x, 340);
+                g.DrawLine(penOuter, x, 20, x, 280);
 
                 //绘制横向线条
-                int y = 80;
+                int y = verticalStartLine;
                 for (int i = 0; i < YNum; i++)
                 {
                     g.DrawLine(penInner, 60, y, 620, y);
@@ -98,7 +99,7 @@ namespace LearningEn
                 x = 60;
                 for (int i = 0; i < GroupNum; i++)
                 {
-                    g.DrawString(n[i].ToString(), font, Brushes.Blue, x, 348); //设置文字内容及输出位置
+                    g.DrawString(n[i].ToString(), font, Brushes.Blue, x, 288); //设置文字内容及输出位置
                     x = x + 80;
                 }
 
@@ -117,7 +118,7 @@ namespace LearningEn
 
                 //y轴
                 String[] m = SetYAxisNum(max, YNum);
-                y = 72;
+                y = verticalStartLine - 8;
                 for (int i = 0; i < YNum; i++)
                 {
                     g.DrawString(m[i].ToString(), font, Brushes.Blue, 25, y); //设置文字内容及输出位置
@@ -130,7 +131,7 @@ namespace LearningEn
                 SolidBrush mybrush = new SolidBrush(Color.Firebrick);
                 SolidBrush mybrush2 = new SolidBrush(Color.DarkSlateBlue);
 
-                x = x - 60;
+                x = x - 70;
                 int times = Convert.ToInt32(m[0]);
                 if (times == 0)
                 {
@@ -139,75 +140,20 @@ namespace LearningEn
                 for (int i = 0; i < GroupNum; i++)
                 {
                     x = x + 60;
-                    g.FillRectangle(mybrush, x, 340 - countgrasp[i] * 260 / times, 20, countgrasp[i] * 260 / times);
+                    g.FillRectangle(mybrush, x, 280 - countgrasp[i] * 260 / times, 20, countgrasp[i] * 260 / times);
                     //g.DrawString(countgrasp[i].ToString(), font2, Brushes.Firebrick, x, 340 - countgrasp[0] - 15); 
                     x = x + 20;
-                    g.FillRectangle(mybrush2, x, 340 - countungrasp[i] * 260 / times, 20, countungrasp[i] * 260 / times);
+                    g.FillRectangle(mybrush2, x, 280 - countungrasp[i] * 260 / times, 20, countungrasp[i] * 260 / times);
                     //g.DrawString(countungrasp[0].ToString(), font2, Brushes.DarkSlateBlue, x, 340 - countungrasp[0] - 15);
                 }
 
-                //第一期
-                //g.FillRectangle(mybrush, x, 340 - countgrasp[0], 20, countgrasp[0]);
-                //g.DrawString(countgrasp[0].ToString(), font2, Brushes.Firebrick, x, 340 - countgrasp[0] - 15);
-                //x = x + 20;
-                //g.FillRectangle(mybrush2, x, 340 - countungrasp[0], 20, countungrasp[0]);
-                //g.DrawString(countungrasp[0].ToString(), font2, Brushes.DarkSlateBlue, x, 340 - countungrasp[0] - 15);
-
-                //第二期
-                //x = x + 60;
-                //g.FillRectangle(mybrush, x, 340 - countgrasp[1], 20, countgrasp[1]);
-                //g.DrawString(countgrasp[1].ToString(), font2, Brushes.Firebrick, x, 340 - countgrasp[1] - 15);
-                //x = x + 20;
-                //g.FillRectangle(mybrush2, x, 340 - countungrasp[1], 20, countungrasp[1]);
-                //g.DrawString(countungrasp[1].ToString(), font2, Brushes.DarkSlateBlue, x, 340 - countungrasp[1] - 15);
-
-                //第三期
-                //x = x + 60;
-                //g.FillRectangle(mybrush, x, 340 - countgrasp[2], 20, countgrasp[2]);
-                //g.DrawString(countgrasp[2].ToString(), font2, Brushes.Firebrick, x, 340 - countgrasp[2] - 15);
-                //x = x + 20;
-                //g.FillRectangle(mybrush2, x, 340 - countungrasp[2], 20, countungrasp[2]);
-                //g.DrawString(countungrasp[2].ToString(), font2, Brushes.DarkSlateBlue, x, 340 - countungrasp[2] - 15);
-
-                //第四期
-                //x = x + 60;
-                //g.FillRectangle(mybrush, x, 340 - countgrasp[3], 20, countgrasp[3]);
-                //g.DrawString(countgrasp[3].ToString(), font2, Brushes.Firebrick, x, 340 - countgrasp[3] - 15);
-                //x = x + 20;
-                //g.FillRectangle(mybrush2, x, 340 - countungrasp[3], 20, countungrasp[3]);
-                //g.DrawString(countungrasp[3].ToString(), font2, Brushes.DarkSlateBlue, x, 340 - countungrasp[3] - 15);
-
-                //上半年
-                //x = x + 60;
-                //g.FillRectangle(mybrush, x, 340 - countgrasp[4], 20, countgrasp[4]);
-                //g.DrawString(countgrasp[4].ToString(), font2, Brushes.Firebrick, x, 340 - countgrasp[4] - 15);
-                //x = x + 20;
-                //g.FillRectangle(mybrush2, x, 340 - countungrasp[4], 20, countungrasp[4]);
-                //g.DrawString(countungrasp[4].ToString(), font2, Brushes.DarkSlateBlue, x, 340 - countungrasp[4] - 15);
-
-                //下半年
-                //x = x + 60;
-                //g.FillRectangle(mybrush, x, 340 - countgrasp[5], 20, countgrasp[5]);
-                //g.DrawString(countgrasp[5].ToString(), font2, Brushes.Firebrick, x, 340 - countgrasp[5] - 15);
-                //x = x + 20;
-                //g.FillRectangle(mybrush2, x, 340 - countungrasp[5], 20, countungrasp[5]);
-                //g.DrawString(countungrasp[5].ToString(), font2, Brushes.DarkSlateBlue, x, 340 - countungrasp[5] - 15);
-
-                //全年
-                //x = x + 60;
-                //g.FillRectangle(mybrush, x, 340 - countgrasp[6], 20, countgrasp[6]);
-                //g.DrawString(countgrasp[6].ToString(), font2, Brushes.Firebrick, x, 340 - countgrasp[6] - 15);
-                //x = x + 20;
-                //g.FillRectangle(mybrush2, x, 340 - countungrasp[6], 20, countungrasp[6]);
-                //g.DrawString(countungrasp[6].ToString(), font2, Brushes.DarkSlateBlue, x, 340 - countungrasp[6] - 15);
-
                 //绘制标识
                 Font font3 = new Font("Arial", 10, FontStyle.Regular);
-                g.DrawRectangle(new Pen(Brushes.Blue), 170, 400, 250, 50); //绘制范围框
-                g.FillRectangle(Brushes.Firebrick, 270, 410, 20, 10); //绘制小矩形
-                g.DrawString("已掌握", font3, Brushes.Firebrick, 292, 408);
-                g.FillRectangle(Brushes.DarkSlateBlue, 270, 430, 20, 10);
-                g.DrawString("未掌握", font3, Brushes.DarkSlateBlue, 292, 428);
+                //g.DrawRectangle(new Pen(Brushes.Blue), 120, 320, 440, 50); //绘制范围框
+                g.FillRectangle(Brushes.Firebrick, 220, 342, 20, 10); //绘制小矩形
+                g.DrawString("已掌握", font3, Brushes.Firebrick, 150, 340);
+                g.FillRectangle(Brushes.DarkSlateBlue, 420, 342, 20, 10);
+                g.DrawString("未掌握", font3, Brushes.DarkSlateBlue, 350, 340);
 
                 MemoryStream ms = new MemoryStream();
                 image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);

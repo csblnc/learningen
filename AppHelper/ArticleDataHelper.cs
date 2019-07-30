@@ -10,12 +10,6 @@ namespace AppHelper
 {
     public class ArticleDataHelper
     {
-        //public static string ReadXmlNodeValue(string filePath, string node)
-        //{
-        //    XmlDocument xdoc = new XmlDocument();
-        //    xdoc.Load(filePath);
-        //}
-
         public static void NewArticlData(string adpath)
         {
             if (File.Exists(adpath)) { }
@@ -30,10 +24,10 @@ namespace AppHelper
         }
 
         /// <summary>
-        /// 如果不存在，则向数据库中添加单词
+        /// 如果不存在，则向ad中添加节点
         /// </summary>
+        /// <param name="adpath"></param>
         /// <param name="word"></param>
-        /// <param name="progress"></param>
         public static void AddNode(string adpath, string word)
         {
             NewArticlData(adpath);
