@@ -45,9 +45,10 @@
     <Compile Include="MyRecordHelper.cs" />
     <Compile Include="StatisticsHelper.cs" />
     <Compile Include="WordDataHelper.cs" />
-    <Compile Include="XmlHelper.cs" />
+    <Compile Include="ArticleDataHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />

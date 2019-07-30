@@ -21,10 +21,9 @@ namespace LearningEn
         public static List<string> dictList;
         public static Dictionary<string,string> dictDict;
         private static bool isword = false;
-        //public static bool isreturn;
-        //public static Form f;
 
         //todo:添加到单词本
+        //todo:单词查询功能新增历史记录
 
         public Dictionary()
         {
@@ -35,32 +34,7 @@ namespace LearningEn
             CbxDictionary.DataSource = dictList;
         }
 
-        private void ReadDictDict()
-        {
-            if (Directory.Exists(AppInfoHelper.GetDictionaryFolder()))
-            {
-                dictList = AppInfoHelper.GetDictList();
-                dictDict = new Dictionary<string, string>();
-                for (int i = 0; i < dictList.Count; i++)
-                {
-                    if (dictList[i] == "有道词典")
-                    {
-                        dictDict.Add("有道词典", @"http://dict.youdao.com/search?q=");
-
-                    }
-                    else
-                    {
-                        dictDict.Add(dictList[i], String.Format("{0}\\{1}.xml", AppInfoHelper.GetDictionaryFolder(), dictList[i]));
-                    }
-                }
-            }
-            else
-            {
-                //MessageBox.Show("找不到字典路径，请设置字典路径！");
-            }
-        }
-
-        private void Wordbook_Load(object sender, EventArgs e)
+        private void Dictionary_Load(object sender, EventArgs e)
         {
             CbxSearch.Focus();
         }
@@ -82,7 +56,6 @@ namespace LearningEn
                     else
                     {
                         Tbx.AppendText(GetPhoneticOnWeb(CbxSearch.Text));
-                        //Tbx.AppendText("\r\n");
                         Tbx.AppendText(GetTransOnWeb(CbxSearch.Text));
                         
                     }
@@ -113,7 +86,7 @@ namespace LearningEn
                 }
                 else
                 {
-                    MessageBox.Show("找不到词典，请重新添加！");
+                    MessageBox.Show("找不到词典，请添加词典！");
                 }
             }
         }
@@ -121,13 +94,9 @@ namespace LearningEn
         public static string GetTransOnWeb(string word)
         {
             string dictPath= @"http://dict.youdao.com/search?q=" + word + "&doctype=xml";
-            //Console.WriteLine(dictPath);
             XmlDocument xdoc = new XmlDocument();
-            //加载
             xdoc.Load(dictPath);
-            //获取根节点
             XmlNode root = xdoc.DocumentElement;
-            //遍历获取子节点
             string trans = "";
             foreach (XmlNode node in root.ChildNodes)
             {
@@ -178,6 +147,11 @@ namespace LearningEn
             return phonetic;
         }
 
+        /// <summary>
+        /// 获得词典的单词量
+        /// </summary>
+        /// <param name="dictName"></param>
+        /// <returns></returns>
         private int GetWordsNumInDict(string dictName)
         {
             if (dictName == "有道词典") { }
@@ -196,7 +170,7 @@ namespace LearningEn
         }
 
         /// <summary>
-        /// 在词典中查询单词，如果不再词典中，返回不包含字符的字符串
+        /// 在词典中查询单词，如果不在词典中，返回不包含字符的字符串
         /// </summary>
         /// <param name="dictPath"></param>
         /// <param name="word"></param>
@@ -223,7 +197,6 @@ namespace LearningEn
                 trans = trans.Remove(trans.Length - 2);
                 isword = true;
             }
-            //Console.WriteLine(trans);
             return trans;
         }
 
@@ -245,13 +218,7 @@ namespace LearningEn
             {
                 phonetic = phonetic.Remove(phonetic.Length - 2);
             }
-            //Console.WriteLine(trans);
             return phonetic;
-        }
-
-        private void TsmDictProperties_Click(object sender, EventArgs e)
-        {
-            //Console.WriteLine(GetWordsNumInDict(CbxDictionary.Text));
         }
 
         private void Cbx_KeyDown(object sender, KeyEventArgs e)

@@ -18,7 +18,7 @@ namespace LearningEn
     {
         public static char keyData;
         private List<string> wordbookList;
-        private Dictionary<string,string> wordbookDict;
+        private Dictionary<string, string> wordbookDict;
         private int formHeight; //窗体高度
         private int formWidth; //窗体宽度
         private int formHeightN; //改变后窗体高度
@@ -27,6 +27,7 @@ namespace LearningEn
         private List<WordStructure> list;
         private List<string> wordbooklist;
         private Label currentlabel;
+        List<WordDataHelper.WordList> l = new List<WordDataHelper.WordList>();
 
         //todo:单词本的翻译显示不全
         //todo:单词本乱序查看
@@ -46,7 +47,23 @@ namespace LearningEn
             setTag(this);
             TbxPageInit();
             CbxWordbook.DataSource = wordbooklist;
+            AddWordList(false);
             ShowFunction();
+        }
+
+        private void AddWordList(bool model)
+        {
+            List<string> dict = new List<string>();
+            WordDataHelper.WordbookListInFolder(AppInfoHelper.GetRecord(), dict);
+            if (dict.Contains(CbxWordbook.Text)) { }
+            else
+            {
+                if (model)
+                {
+                    l.Clear();
+                }
+                l = WordDataHelper.GenerateWordbook(String.Format("{0}\\{1}.xml", AppInfoHelper.GetDictionaryFolder(), CbxWordbook.Text));
+            }
         }
 
         private void GenerateWordbooklist()
@@ -223,6 +240,7 @@ namespace LearningEn
 
         private void CbxWordbook_SelectedIndexChanged(object sender, EventArgs e)
         {
+            AddWordList(true);
             ShowFunction();
         }
 
@@ -305,14 +323,6 @@ namespace LearningEn
         {
 
             list = new List<WordStructure>();
-            List<string> dict = new List<string>();
-            List<WordDataHelper.WordList> l = new List<WordDataHelper.WordList>();
-            WordDataHelper.WordbookListInFolder(AppInfoHelper.GetRecord(), dict);
-            if (dict.Contains(CbxWordbook.Text)) { }
-            else
-            {
-                l = WordDataHelper.GenerateWordbook(String.Format("{0}\\{1}.xml", AppInfoHelper.GetDictionaryFolder(), CbxWordbook.Text));
-            }
             for (int i = 0; i < l.Count; i++)
             {
                 WordStructure ws = new WordStructure();

@@ -102,7 +102,6 @@
             this.TsmDictProperties.Name = "TsmDictProperties";
             this.TsmDictProperties.Size = new System.Drawing.Size(108, 24);
             this.TsmDictProperties.Text = "属性";
-            this.TsmDictProperties.Click += new System.EventHandler(this.TsmDictProperties_Click);
             // 
             // Tbx
             // 
@@ -164,7 +163,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dictionary";
             this.Size = new System.Drawing.Size(1067, 530);
-            this.Load += new System.EventHandler(this.Wordbook_Load);
+            this.Load += new System.EventHandler(this.Dictionary_Load);
             this.CmsDict.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

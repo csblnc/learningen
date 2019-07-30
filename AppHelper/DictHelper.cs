@@ -4,12 +4,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace AppHelper
 {
     public class DictHelper
     {
+        private static readonly int stringlength = 310;
+
         public static bool CheckDict(string dictfile)
         {
             //int num = 0;
@@ -70,7 +73,7 @@ namespace AppHelper
         }
 
         /// <summary>
-        /// 生成包含网络词典在内的词典列表
+        /// 由AppInfo生成包含网络词典在内的词典列表
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>
@@ -126,7 +129,7 @@ namespace AppHelper
                     }
                     else
                     {
-                        progress = "100";
+                        progress = "20";
                     }
                 }
             }
@@ -165,6 +168,7 @@ namespace AppHelper
 
         public static List<WordInfo> ReadWordFromDictionary(string dictpath)
         {
+            var font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             List<WordInfo> list = new List<WordInfo>();
             XmlDocument xdoc = new XmlDocument();
             xdoc.Load(dictpath);
@@ -183,11 +187,10 @@ namespace AppHelper
 
                     }
                     else
-                    {
-                        if (GetLength(s[i].Trim()) > 34)
+                    {                        
+                        if (TextRenderer.MeasureText(s[i].Trim(), font).Width > stringlength)
                         {
-                            //Console.WriteLine("**进入function");
-                            wordinfo.trans += Function(s[i].Trim());
+                            wordinfo.trans += Function(wordinfo.word, s[i].Trim(), font);
                         }
                         else
                         {
@@ -197,11 +200,10 @@ namespace AppHelper
                 }
                 string trans = wordinfo.trans;
                 wordinfo.line = (wordinfo.trans.Length - wordinfo.trans.Replace("\r\n", "").Length) / 2;
-                try
+                if(wordinfo.trans.Substring(wordinfo.trans.Length - 2)=="\r\n")
                 {
                     wordinfo.trans = wordinfo.trans.Remove(wordinfo.trans.Length - 2);
                 }
-                catch { }
                 wordinfo.phonetic = node["phonetic"].InnerText;
                 wordinfo.progress = Convert.ToInt32(node["progress"].InnerText);
                 list.Add(wordinfo);
@@ -214,58 +216,38 @@ namespace AppHelper
             return WordDataHelper.GetProgress(word);
         }
 
-        private static string Function(string v)
+        private static string Function(string word, string v, System.Drawing.Font font)
         {
             string result = "";
             do
             {
                 //Console.WriteLine("**" + result);
-                result += v.Substring(0, GetIndex(v)) + "\r\n";
-                v = v.Substring(GetIndex(v));
-            } while (GetLength(v) > 34);
+                if (word == "affair")
+                {
+                    Console.WriteLine(GetIndex(word, v, font));
+                }
+                result += v.Substring(0, GetIndex(word, v, font)) + "\r\n";
+                v = v.Substring(GetIndex(word, v, font)).Insert(0, "    ");
+            } while (TextRenderer.MeasureText(v, font).Width > stringlength);
+            result += v + "\r\n";
+            //Console.WriteLine("**" + result);
             return result;
         }
 
-        public static int GetLength(string str)
+        public static int GetIndex(string word, string str, System.Drawing.Font font)
         {
             if (str.Length == 0)
-                return 0;
-            ASCIIEncoding ascii = new ASCIIEncoding();
-            int tempLen = 0;
-            byte[] s = ascii.GetBytes(str);
-            for (int i = 0; i < s.Length; i++)
             {
-                if ((int)s[i] == 63)
-                { 
-                    tempLen += 2;
-                }
-                else
-                {
-                    tempLen += 1;
-                }
+                return 0;
             }
-            return tempLen;
-        }
-
-        public static int GetIndex(string str)
-        {
-            if (str.Length == 0)
-                return 0;
-            ASCIIEncoding ascii = new ASCIIEncoding();
-            int tempLen = 0;
             int result = 0;
-            byte[] s = ascii.GetBytes(str);
-            for (int i = 0; i < s.Length; i++)
+            int width = 0;
+            string s = "";
+            for (int i = 0; i < str.Length; i++)
             {
-                if ((int)s[i] == 63)
-                {
-                    tempLen += 2;
-                }
-                else
-                {
-                    tempLen += 1;
-                }
-                if (tempLen > 34)
+                s += str[i];
+                width = TextRenderer.MeasureText(s, font).Width;
+                if (width > stringlength)
                 {
                     result = i;
                     break;

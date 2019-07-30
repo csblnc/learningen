@@ -86,7 +86,7 @@ namespace AppHelper
         }
 
         /// <summary>
-        /// 用于在程序中筛选出所需类型词典的列表
+        /// 生成AppInfo中的词典列表
         /// </summary>
         /// <param name="nodeName">节点的Xpath，如//DictList</param>
         /// <returns></returns>
