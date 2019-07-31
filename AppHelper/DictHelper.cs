@@ -163,7 +163,8 @@ namespace AppHelper
             public string trans { get; set; }
             public string phonetic { get; set; }
             public int progress { get; set; }
-            public int line { get; set; }
+            public string tag { get; set; }
+            //public int line { get; set; }
         }
 
         public static List<WordInfo> ReadWordFromDictionary(string dictpath)
@@ -176,7 +177,7 @@ namespace AppHelper
             foreach (XmlNode node in root.ChildNodes)
             {
                 WordInfo wordinfo = new WordInfo();
-                wordinfo.line = 0;
+                //wordinfo.line = 0;
                 wordinfo.word = node["word"].InnerText;
                 string[] s = node["trans"].InnerText.Split(new string[] { "\r\n"} , StringSplitOptions.None);
                 wordinfo.trans = "";
@@ -199,11 +200,15 @@ namespace AppHelper
                     }
                 }
                 string trans = wordinfo.trans;
-                wordinfo.line = (wordinfo.trans.Length - wordinfo.trans.Replace("\r\n", "").Length) / 2;
-                if(wordinfo.trans.Substring(wordinfo.trans.Length - 2)=="\r\n")
+                //wordinfo.line = (wordinfo.trans.Length - wordinfo.trans.Replace("\r\n", "").Length) / 2;
+                try
                 {
-                    wordinfo.trans = wordinfo.trans.Remove(wordinfo.trans.Length - 2);
+                    if (wordinfo.trans.Substring(wordinfo.trans.Length - 2) == "\r\n")
+                    {
+                        wordinfo.trans = wordinfo.trans.Remove(wordinfo.trans.Length - 2);
+                    }
                 }
+                catch { }
                 wordinfo.phonetic = node["phonetic"].InnerText;
                 wordinfo.progress = Convert.ToInt32(node["progress"].InnerText);
                 list.Add(wordinfo);
@@ -221,11 +226,6 @@ namespace AppHelper
             string result = "";
             do
             {
-                //Console.WriteLine("**" + result);
-                if (word == "affair")
-                {
-                    Console.WriteLine(GetIndex(word, v, font));
-                }
                 result += v.Substring(0, GetIndex(word, v, font)) + "\r\n";
                 v = v.Substring(GetIndex(word, v, font)).Insert(0, "    ");
             } while (TextRenderer.MeasureText(v, font).Width > stringlength);

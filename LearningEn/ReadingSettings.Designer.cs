@@ -39,7 +39,7 @@
             this.Gbx = new System.Windows.Forms.GroupBox();
             this.BtnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CbxDictSelect = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.Gbx.SuspendLayout();
             this.SuspendLayout();
@@ -132,7 +132,7 @@
             // 
             this.Gbx.Controls.Add(this.BtnSearch);
             this.Gbx.Controls.Add(this.label3);
-            this.Gbx.Controls.Add(this.comboBox1);
+            this.Gbx.Controls.Add(this.CbxDictSelect);
             this.Gbx.Font = new System.Drawing.Font("宋体", 10.5F);
             this.Gbx.Location = new System.Drawing.Point(0, 204);
             this.Gbx.Name = "Gbx";
@@ -155,6 +155,7 @@
             this.BtnSearch.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BtnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.BtnSearch.UseVisualStyleBackColor = true;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // label3
             // 
@@ -166,16 +167,16 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "选择单词本";
             // 
-            // comboBox1
+            // CbxDictSelect
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(93, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 19;
+            this.CbxDictSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxDictSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxDictSelect.Font = new System.Drawing.Font("微软雅黑", 10.5F);
+            this.CbxDictSelect.FormattingEnabled = true;
+            this.CbxDictSelect.Location = new System.Drawing.Point(93, 22);
+            this.CbxDictSelect.Name = "CbxDictSelect";
+            this.CbxDictSelect.Size = new System.Drawing.Size(151, 28);
+            this.CbxDictSelect.TabIndex = 19;
             // 
             // ReadingSettings
             // 
@@ -214,6 +215,6 @@
         private System.Windows.Forms.GroupBox Gbx;
         private System.Windows.Forms.Button BtnSearch;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CbxDictSelect;
     }
 }

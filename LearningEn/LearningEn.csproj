@@ -97,6 +97,12 @@
     <Compile Include="CustomProgressBar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DefaultSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DefaultSet.Designer.cs">
+      <DependentUpon>DefaultSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDialogValue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CTextBox.resx">
       <DependentUpon>CTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefaultSet.resx">
+      <DependentUpon>DefaultSet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDialogValue.resx">
       <DependentUpon>FormDialogValue.cs</DependentUpon>

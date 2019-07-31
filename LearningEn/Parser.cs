@@ -60,7 +60,7 @@ namespace LearningEn
                     {
                         c = Color.FromName(ColorTemp);
                     }
-                    catch (Exception e)
+                    catch
                     {
                         c = Color.Black;
                     }

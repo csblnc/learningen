@@ -70,19 +70,8 @@ namespace AppHelper
         /// <param name="value"></param>
         public static void AlterDictList(string dict, Dict type, string value)
         {
-            //Console.WriteLine(dict + "  " + value);
-            XmlDocument xdoc = new XmlDocument();
-            xdoc.Load(Environment.CurrentDirectory + "\\AppInfo.xml");
-            XmlNodeList xmlnl = xdoc.SelectSingleNode("//DictList").ChildNodes;
-            foreach (XmlNode node in xmlnl)
-            {
-                XmlElement element = (XmlElement)node;
-                if (element.GetAttribute("name") == dict)
-                {
-                    element.SetAttribute(type.ToString(), value);
-                }
-            }
-            xdoc.Save(Environment.CurrentDirectory+ "\\AppInfo.xml");
+            string xmlpath = Environment.CurrentDirectory + "\\AppInfo.xml";
+            XmlHelper.AlterAttribute(xmlpath, "//DictList", "name", dict, type.ToString(), value);
         }
 
         /// <summary>
@@ -114,20 +103,47 @@ namespace AppHelper
             result.Add("有道词典");
             for (int i = 0; i < list.Count; i++)
             {
-                result.Add(list[i]);
+                if (!list[i].Contains("乱序版"))
+                {
+                    result.Add(list[i]);
+                }
             }
             return result;
         }
 
+        /// <summary>
+        /// 获取AppInfo中所有iswordbook为true的单词书列表，不包括乱序版
+        /// </summary>
+        /// <param name="nodeName">节点的Xpath，如//DictList</param>
+        /// <returns></returns>
         public static List<string> GetWordbookList()
         {
             List<string> result = SelectList("//WordbookList", "iswordbook");
             return result;
         }
 
+        /// <summary>
+        /// 用于显示全部单词书列表
+        /// </summary>
+        /// <returns></returns>
         public static List<string> SelectWordbookList()
         {
-            List<string> result = SelectList("//WordbookList");
+            List<string> result = new List<string>();
+            List<string> list = SelectList("//WordbookList");
+            for (int i = 0; i < list.Count; i++)
+            {
+                result.Add(list[i]);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获取AppInfo中所有iswordbook为true的单词书列表，包括乱序版
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetDisorderList()
+        {
+            List<string> result = SelectList("//WordbookList", "iswordbook", "gj");
             return result;
         }
 
@@ -146,6 +162,26 @@ namespace AppHelper
         }
 
         private static List<string> SelectList(string nodeName, string attribute)
+        {
+            List<string> result = new List<string>();
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.Load(Environment.CurrentDirectory + "\\AppInfo.xml");
+            XmlNodeList xmlnl = xdoc.SelectSingleNode(nodeName).ChildNodes;
+            foreach (XmlNode node in xmlnl)
+            {
+                XmlElement element = (XmlElement)node;
+                if (element.GetAttribute(attribute) == true.ToString())
+                {
+                    if (!element.GetAttribute("name").Contains("乱序版"))
+                    {
+                        result.Add(element.GetAttribute("name"));
+                    }
+                }
+            }
+            return result;
+        }
+
+        private static List<string> SelectList(string nodeName, string attribute, string gj)
         {
             List<string> result = new List<string>();
             XmlDocument xdoc = new XmlDocument();
@@ -354,6 +390,14 @@ namespace AppHelper
                 }
             }
             XmlNodeList xnl = xNode.ChildNodes;
+            for (int i = 0; i < xnl.Count; i++)
+            {
+                XmlElement element = (XmlElement)xnl.Item(i);
+                if (!dictlist.Contains(element.GetAttribute("name")))
+                {
+                    xNode.RemoveChild(element);
+                }
+            }
             xdoc.Save(Environment.CurrentDirectory + "\\AppInfo.xml");
         }
 

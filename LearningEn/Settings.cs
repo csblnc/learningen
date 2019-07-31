@@ -31,6 +31,7 @@ namespace LearningEn
         {
             MenuColor(PnlDictSetting);
             Gbx.Controls.Clear();
+            dictsettings = new DictSettings();
             Gbx.Controls.Add(dictsettings);
         }
 
@@ -38,6 +39,7 @@ namespace LearningEn
         {
             MenuColor(PnlReciteSetting);
             Gbx.Controls.Clear();
+            recitesettings = new ReadingSettings();
             Gbx.Controls.Add(recitesettings);
         }
 

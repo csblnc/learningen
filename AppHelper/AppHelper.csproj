@@ -47,6 +47,7 @@
     <Compile Include="StatisticsHelper.cs" />
     <Compile Include="WordDataHelper.cs" />
     <Compile Include="ArticleDataHelper.cs" />
+    <Compile Include="XmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

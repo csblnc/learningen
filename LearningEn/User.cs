@@ -228,15 +228,9 @@ namespace LearningEn
 
         private void 测试ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("系统颜色："+ SystemColors.Control.R + "  " + SystemColors.Control.B + "  " + SystemColors.Control.G);
-            Console.WriteLine(Application.StartupPath);
-            Console.WriteLine("****路径测试****");
-            Console.WriteLine("Environment.CurrentDirectory: " + Environment.CurrentDirectory.ToString());
-            Console.WriteLine("Application.StartupPath: " + Application.StartupPath.ToString());
-            Console.WriteLine("Directory.GetCurrentDirectory(): " + Directory.GetCurrentDirectory());
-            Console.WriteLine("AppDomain.CurrentDomain.BaseDirectory: " + AppDomain.CurrentDomain.BaseDirectory);
-            Console.WriteLine("AppDomain.CurrentDomain.SetupInformation.ApplicationBase: " + AppDomain.CurrentDomain.SetupInformation.ApplicationBase);
-            StatisticsHelper.GenerateWordLog();
+            DefaultSet d = new DefaultSet("aaa");
+            d.Text = "aaa";
+            d.Show();
         }
 
         private void TsmTools_Click(object sender, EventArgs e)

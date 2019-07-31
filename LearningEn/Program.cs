@@ -14,6 +14,8 @@ namespace LearningEn
         {
             //System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("de");
             //WordDataHelper.UpdateDict();
+            AppInfoHelper.UpdateDictList();
+            AppInfoHelper.UpdateWordbookList();
             User u = new User();
             //Settings u = new Settings();
             u.ShowDialog();

@@ -64,7 +64,6 @@ namespace LearningEn
         {
             //if (TsbTransform.ToolTipText == "显示文本视图")
             //{
-            //    Console.WriteLine("Rtb已经显示");
             //    Ste.Hide();
             //    Rtb.Show();
             //    TsbTransform.ToolTipText = "显示超文本视图";
@@ -82,11 +81,9 @@ namespace LearningEn
         {
             if (save)
             {
-                //Console.WriteLine("title = " + title);
                 if (title.Trim() != "")
                 {
                     string filename = TsbTbx.Text + "\\" + title.Trim() + ".xml";
-                    //Console.WriteLine("filename = " + filename);
                     if (File.Exists(filename))
                     {
                         DialogResult dr = MessageBox.Show("文件已存在，是否覆盖？", "保存", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);

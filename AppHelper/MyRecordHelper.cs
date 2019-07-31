@@ -32,11 +32,7 @@ namespace AppHelper
             if (File.Exists(path)) { }
             else
             {
-                XmlDocument xdoc = new XmlDocument();
-                xdoc.AppendChild(xdoc.CreateXmlDeclaration("1.0", "UTF-8", null));
-                XmlElement root = xdoc.CreateElement("wordbook");
-                xdoc.AppendChild(root);
-                xdoc.Save(path);
+                XmlHelper.CreateXml(path, "wordbook");
             }
         }
 

@@ -29,6 +29,8 @@ namespace LearningEn
             CTBArticle.Value = AppInfoHelper.GetArticleFolder();
             CTBArticle.Button = "浏览";
             CTBArticle.OnOpen += new EventHandler(ReviseArticlePath);
+            CbxDefaultArticleDict.DataSource = AppInfoHelper.GetWordbookList();
+            CbxDictSelect.DataSource = AppInfoHelper.GetWordbookList();
         }
 
         private void InitialApp()
@@ -114,6 +116,39 @@ namespace LearningEn
         private void ReciteSettings_Click(object sender, EventArgs e)
         {
             //TbxReciteNumber.UseWaitCursor = false;
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            DisorderDict();
+            AppInfoHelper.UpdateWordbookList();
+        }
+
+        private void DisorderDict()
+        {
+            string srcpath = AppInfoHelper.GetDictionaryFolder() + "\\" + CbxDictSelect.Text + ".xml";
+            string destpath = AppInfoHelper.GetDictionaryFolder() + "\\" + CbxDictSelect.Text + "乱序版.xml";
+            //XmlHelper.CreateXml(destpath, "wordbook");
+            List<string> items = XmlHelper.GetInnerXml(srcpath, "wordbook", "item");
+            Random r = new Random();
+            List<string> newlist = new List<string>();
+            foreach(string s in items)
+            {
+                newlist.Insert(r.Next(newlist.Count), "<item>" + s + "</item>");
+            }
+            newlist.Insert(0, "<wordbook>");
+            newlist.Add("</wordbook>");
+            if (File.Exists(destpath))
+            {
+                File.Delete(destpath);
+            }
+            //FileStream fs = new FileStream(destpath, FileMode.Create);
+            StreamWriter sw = new StreamWriter(destpath, true, Encoding.UTF8);
+            foreach (string s in newlist)
+            {
+                sw.Write(s + "\r\n");
+            }
+            sw.Close();
         }
     }
 }

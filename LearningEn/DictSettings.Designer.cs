@@ -28,38 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.ClbDictSetting = new System.Windows.Forms.CheckedListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.ClbWordbookSetting = new System.Windows.Forms.CheckedListBox();
-            this.CbxDefaultDict = new System.Windows.Forms.ComboBox();
-            this.CbxDefaultWordbook = new System.Windows.Forms.ComboBox();
             this.CTBDict = new LearningEn.CTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.CTBDefaultDict = new LearningEn.CTextBox();
+            this.CTBDefaultWordbook = new LearningEn.CTextBox();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.label1.Location = new System.Drawing.Point(10, 249);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 14);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "默认词典";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 10.5F);
-            this.label2.Location = new System.Drawing.Point(236, 249);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 14);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "默认单词书";
             // 
             // ClbDictSetting
             // 
@@ -105,32 +81,6 @@
             this.ClbWordbookSetting.TabIndex = 9;
             this.ClbWordbookSetting.SelectedValueChanged += new System.EventHandler(this.ClbWordbookSetting_SelectedIndexChanged);
             // 
-            // CbxDefaultDict
-            // 
-            this.CbxDefaultDict.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbxDefaultDict.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CbxDefaultDict.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.CbxDefaultDict.FormattingEnabled = true;
-            this.CbxDefaultDict.Location = new System.Drawing.Point(75, 244);
-            this.CbxDefaultDict.Name = "CbxDefaultDict";
-            this.CbxDefaultDict.Size = new System.Drawing.Size(147, 28);
-            this.CbxDefaultDict.TabIndex = 10;
-            this.CbxDefaultDict.SelectedIndexChanged += new System.EventHandler(this.CbxDefaultDict_SelectedIndexChanged);
-            this.CbxDefaultDict.MouseEnter += new System.EventHandler(this.CbxDefaultDict_MouseEnter);
-            // 
-            // CbxDefaultWordbook
-            // 
-            this.CbxDefaultWordbook.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbxDefaultWordbook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CbxDefaultWordbook.Font = new System.Drawing.Font("微软雅黑", 10.5F);
-            this.CbxDefaultWordbook.FormattingEnabled = true;
-            this.CbxDefaultWordbook.Location = new System.Drawing.Point(315, 244);
-            this.CbxDefaultWordbook.Name = "CbxDefaultWordbook";
-            this.CbxDefaultWordbook.Size = new System.Drawing.Size(147, 28);
-            this.CbxDefaultWordbook.TabIndex = 11;
-            this.CbxDefaultWordbook.SelectedIndexChanged += new System.EventHandler(this.CbxDefaultWordbook_SelectedIndexChanged);
-            this.CbxDefaultWordbook.MouseEnter += new System.EventHandler(this.CbxDefaultWordbook_MouseEnter);
-            // 
             // CTBDict
             // 
             this.CTBDict.AllowMultiline = false;
@@ -144,39 +94,41 @@
             this.CTBDict.TabIndex = 3;
             this.CTBDict.Value = "";
             // 
-            // label5
+            // CTBDefaultDict
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 263);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "（未开放）";
+            this.CTBDefaultDict.AllowMultiline = false;
+            this.CTBDefaultDict.Button = "button1";
+            this.CTBDefaultDict.DispalyOpenButton = false;
+            this.CTBDefaultDict.Label = "label";
+            this.CTBDefaultDict.Location = new System.Drawing.Point(13, 245);
+            this.CTBDefaultDict.Name = "CTBDefaultDict";
+            this.CTBDefaultDict.Size = new System.Drawing.Size(448, 35);
+            this.CTBDefaultDict.TabIndex = 20;
+            this.CTBDefaultDict.Value = "";
             // 
-            // label6
+            // CTBDefaultWordbook
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(243, 263);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 12);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "（未开放）";
+            this.CTBDefaultWordbook.AllowMultiline = false;
+            this.CTBDefaultWordbook.Button = "button1";
+            this.CTBDefaultWordbook.DispalyOpenButton = false;
+            this.CTBDefaultWordbook.Label = "label";
+            this.CTBDefaultWordbook.Location = new System.Drawing.Point(13, 295);
+            this.CTBDefaultWordbook.Name = "CTBDefaultWordbook";
+            this.CTBDefaultWordbook.Size = new System.Drawing.Size(448, 35);
+            this.CTBDefaultWordbook.TabIndex = 21;
+            this.CTBDefaultWordbook.Value = "";
             // 
             // DictSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.CbxDefaultWordbook);
-            this.Controls.Add(this.CbxDefaultDict);
+            this.Controls.Add(this.CTBDefaultWordbook);
+            this.Controls.Add(this.CTBDefaultDict);
             this.Controls.Add(this.ClbWordbookSetting);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ClbDictSetting);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.CTBDict);
             this.Name = "DictSettings";
             this.Size = new System.Drawing.Size(478, 361);
@@ -188,15 +140,11 @@
 
         #endregion
         private CTextBox CTBDict;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox ClbDictSetting;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckedListBox ClbWordbookSetting;
-        private System.Windows.Forms.ComboBox CbxDefaultDict;
-        private System.Windows.Forms.ComboBox CbxDefaultWordbook;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private CTextBox CTBDefaultDict;
+        private CTextBox CTBDefaultWordbook;
     }
 }

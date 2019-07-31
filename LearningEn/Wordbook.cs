@@ -25,7 +25,6 @@ namespace LearningEn
         private int formWidthN; //改变后窗体宽度
         private int count = 0;
         private List<WordStructure> list;
-        private List<string> wordbooklist;
         private Label currentlabel;
         List<WordDataHelper.WordList> l = new List<WordDataHelper.WordList>();
         private bool ismemory;
@@ -47,10 +46,10 @@ namespace LearningEn
             formWidthN = this.Width;
             formHeightN = this.Height;
             LabelCount();
-            GenerateWordbooklist();
             setTag(this);
             TbxPageInit();
-            CbxWordbook.DataSource = wordbooklist;
+            CbxWordbook.DataSource = AppInfoHelper.GetDisorderList();
+            CbxWordbook.SelectedIndex = CbxWordbook.Items.IndexOf(AppInfoHelper.GetDefaultWordbook());
             AddWordList(false);
             ShowFunction();
         }
@@ -59,26 +58,24 @@ namespace LearningEn
         {
             List<string> dict = new List<string>();
             WordDataHelper.WordbookListInFolder(AppInfoHelper.GetRecord(), dict);
-            if (dict.Contains(CbxWordbook.Text)) { }
+            if (dict.Contains(CbxWordbook.Text))
+            {
+                if (model)
+                {
+                    l.Clear();
+                }
+            }
             else
             {
                 if (model)
                 {
                     l.Clear();
                 }
-                l = WordDataHelper.GenerateWordbook(String.Format("{0}\\{1}.xml", AppInfoHelper.GetDictionaryFolder(), CbxWordbook.Text));
-            }
-        }
-
-        private void GenerateWordbooklist()
-        {
-            wordbooklist = new List<string>();
-            WordDataHelper.WordbookListInFolder(AppInfoHelper.GetMyWordBookFolder(), wordbooklist);
-            List<string> dictlist = new List<string>();
-            dictlist= DictHelper.ReadDictList();
-            for(int i = 0; i < dictlist.Count; i++)
-            {
-                wordbooklist.Add(dictlist[i]);
+                string path = String.Format("{0}\\{1}.xml", AppInfoHelper.GetDictionaryFolder(), CbxWordbook.Text);
+                if (File.Exists(path))
+                {
+                    l = WordDataHelper.GenerateWordbook(path);
+                }
             }
         }
 
