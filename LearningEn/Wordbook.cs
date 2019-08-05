@@ -183,7 +183,7 @@ namespace LearningEn
 
         private Color SetColor(string word)
         {
-            int progress = WordDataHelper.GetProgress(word);
+            int progress = WordDataHelper.GetProgress(FindWord(word));
             Color color = new Color();
             if (progress == AppInfoHelper.GetReciteNumber())
             {
@@ -467,11 +467,20 @@ namespace LearningEn
 
         private string FindWord(string str)
         {
-            if (str.Contains("["))
+            string[] s = str.Split(' ');
+            string result = "";
+            for (int i = 0; i < s.Length; i++)
             {
-                str = str.Substring(0, str.IndexOf("["));
+                if(s[i].Contains("[")|| s[i].Contains("/")||s[i].Contains("0")||s[i].Contains("1")||s[i].Contains("2"))
+                {
+
+                }
+                else
+                {
+                    result += s[i].Trim() + " ";
+                }
             }
-            string result = str.Trim();
+            result = result.Trim();
             return result;
         }
 
@@ -484,14 +493,14 @@ namespace LearningEn
         private void TsmGrasp_Click(object sender, EventArgs e)
         {
             //WordDataHelper.AddWordData(currentlabel.Text, 0);
-            WordDataHelper.AutoAddProgress(currentlabel.Text);
+            WordDataHelper.AutoAddProgress(FindWord(currentlabel.Text));
             currentlabel.ForeColor = SetColor(currentlabel.Text);
             currentlabel.BackColor = SystemColors.Control;
         }
 
         private void TsmUngrasp_Click(object sender, EventArgs e)
         {
-            WordDataHelper.AutoSubtractProgress(currentlabel.Text);
+            WordDataHelper.AutoSubtractProgress(FindWord(currentlabel.Text));
             currentlabel.ForeColor = SetColor(currentlabel.Text);
             currentlabel.BackColor = SystemColors.Control;
         }
@@ -525,6 +534,13 @@ namespace LearningEn
                 BtnMemoryModel.Text = "默写模式";
                 ShowWord();
             }
+        }
+
+        private void 已掌握ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WordDataHelper.GraspProgress(FindWord(currentlabel.Text));
+            currentlabel.ForeColor = SetColor(currentlabel.Text);
+            currentlabel.BackColor = SystemColors.Control;
         }
     }
 }

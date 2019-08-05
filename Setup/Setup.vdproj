@@ -27,6 +27,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0EE3D8448F63C77706DC2EC6581D6089"
+        "OwnerKey" = "8:_F0020FBA03E649A99A808225E27A5805"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_35D9F1EF40494D30B2EDC6B3BE871056"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -53,12 +59,6 @@
         {
         "MsmKey" = "8:_63A208844C75481A9F4F8AC8D14C7330"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_86FB5AC9B5F1DCBAD82A7F1111E7844F"
-        "OwnerKey" = "8:_F0020FBA03E649A99A808225E27A5805"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -136,7 +136,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_86FB5AC9B5F1DCBAD82A7F1111E7844F"
+        "OwnerKey" = "8:_0EE3D8448F63C77706DC2EC6581D6089"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -280,6 +280,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0EE3D8448F63C77706DC2EC6581D6089"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:AppHelper, Version=1.0.1.32, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_0EE3D8448F63C77706DC2EC6581D6089"
+                    {
+                    "Name" = "8:AppHelper.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:AppHelper.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_001732FD16BB471691107AECD0906D58"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_35D9F1EF40494D30B2EDC6B3BE871056"
             {
             "SourcePath" = "8:..\\LearningEn\\bin\\Debug\\Model.xml"
@@ -378,37 +409,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_86FB5AC9B5F1DCBAD82A7F1111E7844F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:AppHelper, Version=1.0.1.32, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_86FB5AC9B5F1DCBAD82A7F1111E7844F"
-                    {
-                    "Name" = "8:AppHelper.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:AppHelper.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_001732FD16BB471691107AECD0906D58"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_87739661F5A84E1F9D1C182726D647E7"
@@ -766,15 +766,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Beethoven English"
-        "ProductCode" = "8:{42E94F10-7FAE-4024-822D-41FD4D22CE6D}"
-        "PackageCode" = "8:{4A6F72FA-B557-4FFE-A005-ACDAF6F6E180}"
-        "UpgradeCode" = "8:{C839C8A2-9144-4B93-8AA1-1087B3AE0AD6}"
+        "ProductCode" = "8:{31547A2E-A9C2-4455-9E15-306797E41E6D}"
+        "PackageCode" = "8:{3A22FC8B-8830-4796-A2EE-10009E74BB9E}"
+        "UpgradeCode" = "8:{9D841E1B-C2C2-4B41-9B52-7F25C5D8A6ED}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.42"
+        "ProductVersion" = "8:1.0.43"
         "Manufacturer" = "8:Beethoven"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

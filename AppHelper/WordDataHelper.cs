@@ -107,7 +107,18 @@ namespace AppHelper
         {            
             if (GetProgress(word) < AppInfoHelper.GetReciteNumber())
             {
-                SetProgress(word, GetProgress(word) + 1);
+                int newprogress = GetProgress(word) + 1;
+                SetProgress(word, newprogress);
+                StatisticsHelper.AddWordLog(word, StatisticsHelper.WordLogType.grasp);
+            }
+        }
+
+        public static void GraspProgress(string word)
+        {
+            if (GetProgress(word) < AppInfoHelper.GetReciteNumber())
+            {
+                int newprogress = AppInfoHelper.GetReciteNumber();
+                SetProgress(word, newprogress);
                 StatisticsHelper.AddWordLog(word, StatisticsHelper.WordLogType.grasp);
             }
         }
@@ -115,9 +126,9 @@ namespace AppHelper
         public static void AutoSubtractProgress(string word)
         {
             int newprogress = GetProgress(word) - 3;
-            if (newprogress > -2) { }
-            else { newprogress = -2; }
-            SetProgress(word, GetProgress(word) - 1);
+            if (newprogress < -2) { newprogress = -2; }
+            SetProgress(word, newprogress);
+            Console.WriteLine(newprogress);
             StatisticsHelper.AddWordLog(word, StatisticsHelper.WordLogType.ungrasp);
         }
 
