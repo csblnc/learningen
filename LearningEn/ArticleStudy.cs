@@ -48,12 +48,10 @@ namespace LearningEn
             formHeightN = this.Height;
             graspList = StatisticsHelper.GetWordLog(StatisticsHelper.GetWordLogPath(DateTime.Now), StatisticsHelper.WordLogType.grasp);
             ungraspList = new List<string>();
-            setTag(this);//调用方法
-            
+            setTag(this);//调用方法            
             dictList = DictHelper.GenerateDictList();
             dictDict = DictHelper.ReadDictDict();
             CbxDictionary.DataSource = dictList;
-
             MoveControl moveControl = new MoveControl(Tbx);
         }
 
@@ -247,21 +245,6 @@ namespace LearningEn
             }            
         }
 
-        private void ShowTreeView()
-        {
-
-        }
-
-        private void Tv_DrawNode(object sender, DrawTreeNodeEventArgs e)
-        {
-            //隐藏节点前的checkbox
-            if (!wordList.Contains(e.Node.Text))
-            {
-                //TreeViewUtility.HideCheckBox(Tv, e.Node);
-            }
-            e.DrawDefault = true;
-        }
-
         #region 调整控件的尺寸
         private void setTag(Control cons)
         {
@@ -391,11 +374,6 @@ namespace LearningEn
             MoveControl moveControl = new MoveControl(Tbx);
         }
 
-        private void CbxDictionary_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// 标记为会，并从列表中删除
         /// </summary>
@@ -403,28 +381,6 @@ namespace LearningEn
         /// <param name="e"></param>
         private void TsmGrasp_Click(object sender, EventArgs e)
         {
-            //if (graspList.Contains(Tv.SelectedNode.Text.ToString())) { }
-            //else
-            //{
-            //    graspList.Add(Tv.SelectedNode.Text.ToString());
-            //    WordDataHelper.AddWordData(Tv.SelectedNode.Text.ToString(), 0);
-            //    WordDataHelper.AutoAddProgress(Tv.SelectedNode.Text.ToString());
-            //    Tv.SelectedNode.Remove();
-            //}
-            //graspList.Add(Clb.SelectedItem.ToString());
-            //Console.WriteLine(Clb.SelectedItem.ToString());
-            //WordDataHelper.AddWordData(Clb.SelectedItem.ToString(), 0);
-            //WordDataHelper.AutoAddProgress(Clb.SelectedItem.ToString());
-            //for (int i = 0; i < Clb.Items.Count; i++)
-            //{
-            //    if (Clb.GetItemChecked(i))
-            //    {
-            //        Clb.Items.RemoveAt(i);
-            //        transList.RemoveAt(i);
-            //        i--;
-            //    }
-            //}
-            //WordDataHelper.AddWordData(LbxWord.SelectedItem.ToString(), 0);
             WordDataHelper.AutoAddProgress(LbxWord.SelectedItem.ToString());
             for (int i = 0; i < LbxWord.Items.Count; i++)
             {
@@ -491,16 +447,6 @@ namespace LearningEn
                 WordDataHelper.AddWordData(LbxWord.SelectedItems[i].ToString(), 1);
                 WordDataHelper.AutoSubtractProgress(LbxWord.SelectedItems[i].ToString());
             }
-        }
-
-        private void Clb_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Clb_MouseHover(object sender, EventArgs e)
-        {
-
         }
 
         private void BtnCool_Click(object sender, EventArgs e)

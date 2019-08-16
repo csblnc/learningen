@@ -143,37 +143,37 @@ namespace LearningEn
             }
         }
 
-        public void AddLable(Label label1, Point p, string index, string text, int progress)
+        public void AddLable(Label label, Point p, string index, string text, int progress)
         {
-            label1.BringToFront();
-            label1.AutoSize = true;
-            label1.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-            label1.Location = p;
-            //label1.Size = new System.Drawing.Size(74, 21);
-            label1.TabIndex = 21;
-            label1.Text = text;
-            label1.Parent = PnlWord;
+            label.BringToFront();
+            label.AutoSize = true;
+            label.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
+            label.Location = p;
+            //label.Size = new System.Drawing.Size(74, 21);
+            label.TabIndex = 21;
+            label.Text = text;
+            label.Parent = PnlWord;
             if (progress == -5)
             {
-                label1.MouseDown += new MouseEventHandler(LabelMouseDown);
+                label.MouseDown += new MouseEventHandler(LabelMouseDown);
             }
             else
             {
-                label1.ContextMenuStrip = Cms;
-                label1.MouseDown += new MouseEventHandler(LabelRightDown);
-                label1.ForeColor = SetColor(text);
+                label.ContextMenuStrip = Cms;
+                label.MouseDown += new MouseEventHandler(LabelRightDown);
+                label.ForeColor = SetColor(text);
                 if (ismemory)
                 {
-                    label1.Text = text;
+                    label.Text = text;
                 }
                 else
                 {
-                    label1.Text = index;
+                    label.Text = index;
                 }
             }
-            //label = label1;
-            PnlWord.Controls.Add(label1);
-            addTag(label1);
+            //label = label;
+            PnlWord.Controls.Add(label);
+            addTag(label);
         }
 
         private void LabelMouseDown(object sender, MouseEventArgs e)
@@ -467,17 +467,20 @@ namespace LearningEn
 
         private string FindWord(string str)
         {
-            string[] s = str.Split(' ');
             string result = "";
-            for (int i = 0; i < s.Length; i++)
+            try
             {
-                if(s[i].Contains("[")|| s[i].Contains("/")||s[i].Contains("0")||s[i].Contains("1")||s[i].Contains("2"))
+                result = str.Substring(0, str.IndexOf('/'));
+            }
+            catch
+            {
+                try
                 {
-
+                    result = str.Substring(0, str.IndexOf('['));
                 }
-                else
+                catch
                 {
-                    result += s[i].Trim() + " ";
+                    result = str;
                 }
             }
             result = result.Trim();
@@ -488,6 +491,8 @@ namespace LearningEn
         {
             SpeechSynthesizer sp = new SpeechSynthesizer();
             sp.Speak(FindWord(currentlabel.Text));
+            string result = FindWord(currentlabel.Text);
+            Console.WriteLine(result);
         }
 
         private void TsmGrasp_Click(object sender, EventArgs e)

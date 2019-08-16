@@ -83,7 +83,6 @@
             this.CbxDictionary.Name = "CbxDictionary";
             this.CbxDictionary.Size = new System.Drawing.Size(205, 28);
             this.CbxDictionary.TabIndex = 5;
-            this.CbxDictionary.SelectedIndexChanged += new System.EventHandler(this.CbxDictionary_SelectedIndexChanged);
             this.CbxDictionary.MouseEnter += new System.EventHandler(this.CbxDictionary_MouseEnter);
             // 
             // Tbx
